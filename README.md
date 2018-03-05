@@ -28,8 +28,9 @@ Code Fellows 301 Final Team Project
 This is a way for anyone to see what was happening on the day they were born (or a day they choose). 
 
 ## Research/Sources
-
-
+* Markdown info: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
+* Gitignore from gitignore.io
+* eslintrc from CF301 class repo
 
 
 
