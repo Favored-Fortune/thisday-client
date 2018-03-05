@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>This Day</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/base.css">
-        <link rel="stylesheet" href="styles/icons.css">
-        <link rel="stylesheet" href="styles/layout.css">
-        <link rel="stylesheet" href="styles/modules/aboutView.css">
-        <link rel="stylesheet" href="styles/modules/resultsView.css">
-        <link rel="stylesheet" href="styles/modules/errorView.css">
-    </head>
-    <body>
-        <header>
-            <nav class="main-nav">
-                <div class="icon-menu"></div>
-           
-                <ul id="navLinks">
-                    <li class="tab">
-                        <a href="/" class="icon-home">  Home</a>
-                    </li>
-                    <li class="tab">
-                        <a href="/results" class="icon-stack">  Results</a>
-                    </li>
-                    <li class="tab">
-                        <a href="/aboutUs" class="icon-users">  About Us</a>
-                    </li>
-                </ul>
-        </header>
-        <main>
-            <section class="request tab-content">
+  <head>
+    <meta charset="UTF-8">
+    <title>This Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules/aboutView.css">
+    <link rel="stylesheet" href="styles/modules/resultsView.css">
+    <link rel="stylesheet" href="styles/modules/errorView.css">
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        
+        <ul id="navLinks">
+          <li class="tab">
+            <a href="/" class="icon-home">  Home</a>
+          </li>
+          <li class="tab">
+            <a href="/results" class="icon-stack">  Results</a>
+          </li>
+          <li class="tab">
+            <a href="/aboutUs" class="icon-users">  About Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="request tab-content">
 
-            </section>
-            <section class="results tab-content">
-                <nav id="results-nav">
-                    <ul id="resLinks">
-                        <li class="tab">
-                            <a href="/results/weather" class="icon-cloud">  Weather</a>
-                        </li>
-                        <li class="tab">
-                            <a href="/results/events" class="icon-calendar">  Day's Events</a>
-                        </li>
-                        <!-- <li class="tab">
-                            <a href="/results/history" class="icon-newspaper">  Day Through History</a>
-                        </li>
-                        <li class="tab">
-                            <a href="/results/people" class="icon-man-woman">  Celebrities</a>
-                        </li> -->
-                    </ul>
-                </nav>
-            </section>
-            <section class="history tab-content">
+      </section>
+      <section class="results tab-content">
+          <nav id="results-nav">
+              <ul id="resLinks">
+                  <li class="tab">
+                      <a href="/results/weather" class="icon-cloud">  Weather</a>
+                  </li>
+                  <li class="tab">
+                      <a href="/results/events" class="icon-calendar">  Day's Events</a>
+                  </li>
+                  <!-- <li class="tab">
+                      <a href="/results/history" class="icon-newspaper">  Day Through History</a>
+                  </li>
+                  <li class="tab">
+                      <a href="/results/people" class="icon-man-woman">  Celebrities</a>
+                  </li> -->
+              </ul>
+          </nav>
+      </section>
+      <section class="history tab-content">
 
-            </section>
-            <section class="aboutUs tab-content">
+      </section>
+      <section class="aboutUs tab-content">
 
-            </section>
-            <section class="error-view tab-content">
+      </section>
+      <section class="error-view tab-content">
 
-            </section>
-        </main>
-        <footer></footer>
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="scripts/models/thisday.js"></script>
-    <script src="scripts/views/requestView.js"></script>
-    <script src="scripts/views/resultsView.js"></script>
-    <script src="scripts/views/historyView.js"></script>
-    <script src="scripts/views/errorView.js"></script>
-    <script src="scripts/models/routes.js"></script>
+      </section>
+    </main>
+    <footer>
+      <a href="" class="icon-github"></a>
+      <a href="" class="icon-linkedin"></a>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="scripts/models/thisday.js"></script>
+  <script src="scripts/views/requestView.js"></script>
+  <script src="scripts/views/resultsView.js"></script>
+  <script src="scripts/views/historyView.js"></script>
+  <script src="scripts/views/errorView.js"></script>
+  <script src="scripts/models/routes.js"></script>
 </html>
