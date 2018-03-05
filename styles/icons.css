@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5gkt96');
+  src:  url('fonts/icomoon.eot?5gkt96#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5gkt96') format('truetype'),
+    url('fonts/icomoon.woff?5gkt96') format('woff'),
+    url('fonts/icomoon.svg?5gkt96#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-newspaper:before {
+  content: "\e904";
+}
+.icon-stack:before {
+  content: "\e92e";
+}
+.icon-calendar:before {
+  content: "\e953";
+}
+.icon-users:before {
+  content: "\e972";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-cloud:before {
+  content: "\e9c1";
+}
+.icon-sun:before {
+  content: "\e9d4";
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+}
+.icon-man-woman:before {
+  content: "\e9de";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
