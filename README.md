@@ -34,7 +34,8 @@ As a developer, I want to have a strech goal of offering the user a star chart f
 ## Research/Sources
 * Markdown info: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
 * Gitignore from gitignore.io
-* eslintrc from CF301 class repoc
+* eslintrc from CF301 class repo
+* Erik Meyer for reset.css under MIT license
 
 
 
