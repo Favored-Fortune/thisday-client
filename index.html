@@ -37,7 +37,10 @@
     </header>
     <main>
       <section class="request tab-content">
-
+        <form id="requestDate">                     
+          <label>Enter the Date you wish to view:</label>                     
+          <input id="year" type="text" placeholder="YYYY"></input>                    <input id="month" type="text" placeholder="MM"></input>                     <input id="day" type="text" placeholder="DD"></input>                     <button type="submit">Submit</button>                 
+        </form>
       </section>
       <section class="results tab-content">
         <nav id="results-nav">
@@ -130,10 +133,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="scripts/models/thisday.js"></script>
-  <script src="scripts/views/requestView.js"></script>
-  <script src="scripts/views/resultsView.js"></script>
-  <script src="scripts/views/historyView.js"></script>
-  <script src="scripts/views/errorView.js"></script>
+  <script src="scripts/views/thisday.js"></script>
+  <script src="scripts/models/news.js"></script>
+  <script src="scripts/models/resultsView.js"></script>
+  <!-- <script src="scripts/views/historyView.js"></script> -->
+  <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/models/routes.js"></script>
 </html>
