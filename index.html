@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>This Day</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam|Merienda+One">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/icons.css">
@@ -11,14 +12,15 @@
     <link rel="stylesheet" href="styles/modules/aboutView.css">
     <link rel="stylesheet" href="styles/modules/resultsView.css">
     <link rel="stylesheet" href="styles/modules/errorView.css">
-
+    
     <!-- This is the template for error messages -->
     <script id="error-template" type="text/x-handlebars-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
   </head>
   <body>
-    <header>
+    <header class="main-container">
+      <h1>Welcome to <strong>On This Day</strong>!</h1>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul id="navLinks">
@@ -31,6 +33,7 @@
         </ul>
     </header>
     <main>
+<<<<<<< HEAD
 
       <!-- <section class="request tab-content">
         <h2>Tell us your favorite day</h2> <a href="/request"></a>
@@ -57,6 +60,15 @@
             <input type="date" id="fav_date" placeholder="Favorite Date" required>
           </label>
           <button id="submit-user"> <a href="/results">Save My Info</a></button>
+=======
+      <section class="request tab-content">
+        <form id="requestDate">                     
+          <label>Enter the Date you wish to view:</label>  <br/>                   
+          <input id="year" type="text" placeholder="YYYY"></input>                    
+          <input id="month" type="text" placeholder="MM"></input>                     
+          <input id="day" type="text" placeholder="DD"></input>                     
+          <button type="submit">Submit</button>                 
+>>>>>>> staging
         </form>
       </section>
       <section class="results tab-content">
@@ -79,48 +91,45 @@
       </section>
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
-        <ul>
-          <li>Brent Williams
-            <li class="icon-github">
-             <a href="https://github.com/wtnerb"> Github </a>
+        <ul class="about-list">
+          <li class="person">
+            <h3>Brent Williams</h3>
+            <li>
+             <a href="https://github.com/wtnerb" class="icon-github"></a>
             </li>
             <li>Bio</li>
           </li>
-          <li>Kris Sakarias
-            <li class="icon-github">
-              <a href="https://github.com/kris71990"> Github</a>
-            </li>
-            <li class="icon-linkedin">
-                <a href=""> LinkedIn</a>
+          <li class="person">
+            <h3>Kris Sakarias</h3>
+            <li>
+              <a href="https://github.com/kris71990" class="icon-github"></a>
+              <a href="" class="icon-linkedin"></a>
             </li>
             <li>Bio</li>
           </li>
-          <li>Mikayla Mehelich
-              <li class="icon-github">
-                <a href="https://github.com/MMehelich"> Github</a>
-              </li>
-              <li class="icon-linkedin">
-                  <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/"> LinkedIn</a>
-              </li>
-              <li> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</li>
+          <li class="person">
+            <h3>Mikayla Mehelich</h3>
+            <li>
+              <a href="https://github.com/MMehelich" class="icon-github"></a>
+              <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin"></a>
+            </li>
+            <li> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</li>
           </li>
-          <li>Steven Starwalt
-              <li class="icon-github">
-                <a href="https://github.com/steveflys"> Github</a>
-              </li>
-              <li class="icon-linkedin">
-                  <a href=""> LinkedIn</a>
-              </li>
-              <li> Bio</li>
+          <li class="person">
+            <h3>Steven Starwalt</h3>
+            <li>
+              <a href="https://github.com/steveflys" class="icon-github"></a>
+              <a href="" class="icon-linkedin"></a>
+            </li>
+            <li> Bio</li>
           </li>
-          <li>Suzanne Richman
-              <li class="icon-github">
-                <a href="https://github.com/FavoredFortune"> Github</a>
-              </li>
-              <li class="icon-linkedin">
-                  <a href="https://www.linkedin.com/in/suzannerichman"> LinkedIn</a>
-              </li>
-              <li>As a full-stack JavaScript I’m keen to help make people’s lives easier.</li>
+          <li class="person">
+            <h3>Suzanne Richman</h3>
+            <li>
+              <a href="https://github.com/FavoredFortune" class="icon-github"></a>
+              <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin"></a>
+            </li>
+            <li>As a full-stack JavaScript I’m keen to help make people’s lives easier.</li>
           </li>
         </ul> 
       </section>
@@ -134,9 +143,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/thisday.js"></script>
-  <script src="scripts/views/requestView.js"></script>
+  <script src="scripts/models/news.js"></script>
   <script src="scripts/views/resultsView.js"></script>
-  <script src="scripts/views/historyView.js"></script>
-  <script src="scripts/views/errorView.js"></script>
+  <!-- <script src="scripts/views/historyView.js"></script> -->
+  <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/models/routes.js"></script>
 </html>

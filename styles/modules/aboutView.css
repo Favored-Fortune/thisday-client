@@ -1,0 +1,37 @@
+/* colors: 
+Yellow: #DBCA69
+Green: #668D3C
+lightGray: #A3ADB8
+darkGray: #4E6172 */
+.aboutUs h1{
+  font-size: 20px;
+}
+
+[class^="icon-"]{
+  font-size: 25px;
+}
+
+strong{
+  font-weight: bold;
+}
+
+.person{
+  margin:20px 0 10px 0;
+}
+
+.person h3{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 640px){ /* TABLET VIEWS */
+  [class^="icon-"]{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+  [class^="icon-"]{
+    font-size: 35px;
+  }
+}
