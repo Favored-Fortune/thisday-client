@@ -17,6 +17,12 @@
     <script id="error-template" type="text/x-handlebars-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
+    <!-- this is the results template for a known user -->
+    <script id="known-user-template" type="text/x-handlebars-template">
+      <h1 id="results">Welcome back, {{username}}</h1>
+      <h2 id="date">This is what happened on {{dateSearched}}</h2>
+    
+    </script>
 
     <script id="news-template" type="text/x-handlebars-template">
       <section class="news-container">
@@ -68,6 +74,8 @@
             <input type="date" id="fav_date" placeholder="Favorite Date" required>
           </label>
           <button id="submit-user"> <a href="/results">Save My Info</a></button>
+        </form>
+      </section>
       <section class="request tab-content">
         <form id="requestDate">                     
           <label>Enter the Date you wish to view:</label>  <br/>                   
@@ -162,6 +170,7 @@
   <script src="scripts/models/thisday.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/resultsView.js"></script>
+  <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
   <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
