@@ -2,8 +2,8 @@
 
 
 // page('/', ctx => app.thisdayView;
-//homepage/request page
-// page('/results', 'hello World');//results page
+// homepage/request page
+page('/results', ctx => app.User.checkUser); 
 // page()'/history','hello world');//history page
 
-// page();
+page();
