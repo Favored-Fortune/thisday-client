@@ -11,12 +11,17 @@
     <link rel="stylesheet" href="styles/modules/aboutView.css">
     <link rel="stylesheet" href="styles/modules/resultsView.css">
     <link rel="stylesheet" href="styles/modules/errorView.css">
+
+    <!-- This is the template for error messages -->
+    <script id="error-template" type="text/x-handlebars-template">
+      <p>{{status}}: {{statusText}}</p>
+    </script>
+
   </head>
   <body>
     <header>
       <nav class="main-nav">
         <div class="icon-menu"></div>
-        
         <ul id="navLinks">
           <li class="tab">
             <a href="/" class="icon-home">  Home</a>
@@ -28,7 +33,6 @@
             <a href="/aboutUs" class="icon-users">  About Us</a>
           </li>
         </ul>
-      </nav>
     </header>
     <main>
       <section class="request tab-content">
@@ -38,41 +42,98 @@
         </form>
       </section>
       <section class="results tab-content">
-          <nav id="results-nav">
-              <ul id="resLinks">
-                  <li class="tab">
-                      <a href="/results/weather" class="icon-cloud">  Weather</a>
-                  </li>
-                  <li class="tab">
-                      <a href="/results/events" class="icon-calendar">  Day's Events</a>
-                  </li>
-                  <!-- <li class="tab">
-                      <a href="/results/history" class="icon-newspaper">  Day Through History</a>
-                  </li>
-                  <li class="tab">
-                      <a href="/results/people" class="icon-man-woman">  Celebrities</a>
-                  </li> -->
-              </ul>
-          </nav>
+        <nav id="results-nav">
+          <ul id="resLinks">
+            <li class="tab">
+                <a href="/results/weather" class="icon-cloud">  Weather</a>
+            </li>
+            <li class="tab">
+                <a href="/results/events" class="icon-calendar">  Day's Events</a>
+            </li>
+            <!-- <li class="tab">
+                <a href="/results/history" class="icon-newspaper">  Day Through History</a>
+            </li>
+            <li class="tab">
+                <a href="/results/people" class="icon-man-woman">  Celebrities</a>
+            </li> -->
+          </ul>
+        </nav>
+      </section>
+      <section class="request tab-content">
+        <h2>Tell us your favorite day</h2> <a href="/request"></a>
+        <p>Learn more about the news, weather and people born on that day in the U.S. location of your choice.</p>
+        <form id ="request-form" action="request-form">
+        <label> <p>Pick your date</p>
+          <input type="date" id="date" placeholder="Request Date" required>
+        </label>
+        <label> <p>Enter the desired zip code</p>
+          <input type="number" id="zip" placeholder="Location Zip Code" required>
+        </label>
+        <label> <p>Would you like to save your request?</p>
+          <input type="checkbox">
+        </label>
+        <br>
+        <button type="submit">Submit and return to the home page</button>
+
       </section>
       <section class="history tab-content">
 
       </section>
       <section class="aboutUs tab-content">
-
+        <h1>About the <strong>On This Day</strong> team</h1>
+        <ul>
+          <li>Brent Williams
+            <li class="icon-github">
+             <a href="https://github.com/wtnerb"> Github </a>
+            </li>
+            <li>Bio</li>
+          </li>
+          <li>Kris Sakarias
+            <li class="icon-github">
+              <a href="https://github.com/kris71990"> Github</a>
+            </li>
+            <li class="icon-linkedin">
+                <a href=""> LinkedIn</a>
+            </li>
+            <li>Bio</li>
+          </li>
+          <li>Mikayla Mehelich
+              <li class="icon-github">
+                <a href="https://github.com/MMehelich"> Github</a>
+              </li>
+              <li class="icon-linkedin">
+                  <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/"> LinkedIn</a>
+              </li>
+              <li> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</li>
+          </li>
+          <li>Steven Starwalt
+              <li class="icon-github">
+                <a href="https://github.com/steveflys"> Github</a>
+              </li>
+              <li class="icon-linkedin">
+                  <a href=""> LinkedIn</a>
+              </li>
+              <li> Bio</li>
+          </li>
+          <li>Suzanne Richman
+              <li class="icon-github">
+                <a href="https://github.com/FavoredFortune"> Github</a>
+              </li>
+              <li class="icon-linkedin">
+                  <a href="https://www.linkedin.com/in/suzannerichman"> LinkedIn</a>
+              </li>
+              <li>As a full-stack JavaScript I’m keen to help make people’s lives easier.</li>
+          </li>
+        </ul> 
       </section>
       <section class="error-view tab-content">
 
       </section>
     </main>
-    <footer>
-      <a href="" class="icon-github"></a>
-      <a href="" class="icon-linkedin"></a>
-    </footer>
+    <footer></footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/views/thisday.js"></script>
   <script src="scripts/models/news.js"></script>
