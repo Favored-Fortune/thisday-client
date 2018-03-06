@@ -76,3 +76,4 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   module.Article = Article;
 })(app);
+
