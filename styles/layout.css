@@ -5,24 +5,91 @@ Yellow: #DBCA69
 Green: #668D3C
 lightGray: #A3ADB8
 darkGray: #4E6172 */
-nav{
+
+nav a, header h1{
   font-family: 'Merienda One', cursive;
+  
 }
 
 li a{
   text-decoration: none;
 }
 
+/* .tab-content{
+  display:none;
+} */
 
-
-@media only screen and (min-width: 640px){ /* TABLET VIEWS */
-
+.main-container{
+  width:100%;
+  height: 40px;
+  padding: 15px;
+  background-color:#668D3C;
 }
 
-@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
-  .icon-menu{
+.icon-menu{
+  display: none;
+  color: #fff;
+}
+
+.main-nav .tab{
+  display: inline;
+  position: relative;
+}
+
+.main-nav:hover .tab{
+  font-size: 20px;
+}
+
+.tab a{
+  text-decoration: none;
+  font-size: 30px; 
+  padding: 0 0 0 25px;
+  color:white
+}
+
+@media only screen and (min-width: 840px){ /* TABLET VIEWS */
+  .icon-menu {
+    display: visible;
+    position: absolute;
+    right: 45px;
+    top: 55px;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 420px){ /*PHONE VIEWS*/
+ 
+
+  .main-nav{
+    display: inline-block; 
+  }
+
+  .tab{
+  list-style-type: none;
+  float: left;
+  padding: 10px;
+}
+
+  .tab {
     display: none;
   }
 
+  .main-nav:hover {
+    width: 100%;
+    padding: 0 0 15px 0;
+  }
 
+  .main-nav:hover ul{
+    width: 100%;
+  }
+
+  .main-nav:hover .tab{
+    display: block;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding: 20px 0;
+    background-color:#668D3C;
+  }
 }
