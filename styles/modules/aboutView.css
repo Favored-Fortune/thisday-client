@@ -1,0 +1,67 @@
+/* colors: 
+Yellow: #DBCA69
+Green: #668D3C
+lightGray: #A3ADB8
+darkGray: #4E6172 */
+.aboutUs h1{
+  font-size: 20px;
+}
+
+[class^="icon-"]{
+  font-size: 25px;
+}
+.tooltiptext{
+  display: none;
+}
+
+strong{
+  font-weight: bold;
+}
+
+.person{
+  margin:5px 0 10px 0;
+}
+
+.person h3{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 640px){ /* TABLET VIEWS */
+  [class^="icon-"]{
+    font-size: 30px;
+  }
+  .tooltiptext{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+  [class^="icon-"]{
+    font-size: 35px;
+  }
+
+  .tooltiptext{
+    display: none;
+    width: 120px;
+    background-color: #A3ADB8;
+    color: #4E6172;
+    text-align: center;
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 6px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: -40px;
+    margin-left: -60px;
+  }
+
+  .icon-github:hover .tooltiptext, .icon-linkedin:hover .tooltiptext{
+    display: 
+    /* position: relative;
+    display: inline-block;
+  } */
+
+}

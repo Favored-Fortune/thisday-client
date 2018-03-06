@@ -23,14 +23,19 @@ Code Fellows 301 Final Team Project
 * Jon Duckett JavaScript & jQuery book
 * Help from our instructors, Allie Grampa & Vinico Sanchez, as well as our TAs and classmates.
 
-## Use:
-
-This is a way for anyone to see what was happening on the day they were born (or a day they choose). 
+## User stories and strech goals:
+As a user, I want to be able to enter a date and location as far back as 1945 and get information on people of note that were born or died on that day, the weather at that location on that day, and notable news events on that day.
+As a user, I want the option of seeing historical births, deaths and news events on the same day.
+As a developer, I want to use web APIs to get the data for the day in question and format it to display for the user.
+As a developer, I want to store the user information such as user name, password, and dates searched in a database so when the user returns I will be able to properly log them in and provide their previous dates searched information. 
+As a developer, I want to save any API keys in my server file so it cannot be accessed by the view.
+As a developer, I want to have a strech goal of offering the user a star chart for the location and date they enter.
 
 ## Research/Sources
 * Markdown info: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
 * Gitignore from gitignore.io
 * eslintrc from CF301 class repo
+* Erik Meyer for reset.css under MIT license
 
 
 
