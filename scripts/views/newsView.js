@@ -24,6 +24,7 @@ This view file works with our news.js data to do all the jQuery magic that displ
     $('.news-container:gt(2)').hide();
     $('#more-news').on('click', function() {
       $('.tab-content').hide();
+      $('.news').empty();
       module.Article.all.map(article => $('.news').append(article.toHtml()))
       $('.news').fadeIn(750);
     })

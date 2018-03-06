@@ -28,6 +28,10 @@ darkGray: #4E6172 */
   bottom: 0;
 } */
 
+.news {
+  text-align: justify;
+}
+
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */
 
