@@ -23,6 +23,15 @@
       <h2 id="date">This is what happened on {{dateSearched}}</h2>
     
     </script>
+
+    <script id="news-template" type="text/x-handlebars-template">
+      <section class="news-container">
+        <h1>{{headline}}</h1>
+        <p id="blurb">{{blurb}}</p>
+        <a href="{{link}}">Read Article</a>
+      </section>
+    </script>
+
   </head>
   <body>
     <header class="main-container">
@@ -55,16 +64,30 @@
       <section class="login login-template tab-content">
         <a href="/"></a>
         <form action="user-form" id="user-form">
-          <label for="username"><p>Enter/Choose your name</p>
-            <input type="text" id="username" placeholder="name"required>
+          <label for="username"><p>Enter/Choose your username</p>
+            <input type="text" id="username" placeholder="username"required>
           </label>
           <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
             <input type="number" id="pin" placeholder="PIN" required>
           </label> -->
-          <label for="fav_date" required > <p>Pick a date and see the results.</p>
-            <input type="date" id="fav_date" required>
+          <label for="fav_date" required > <p>Pick your favorte date to see results</p>
+            <input type="date" id="fav_date" placeholder="Favorite Date" required>
           </label>
-          <button id="submit-user"> <a href="/results">See my results</a></button>
+          <button id="submit-user"> <a href="/results">Save My Info</a></button>
+        </form>
+      </section>
+      <section class="request tab-content">
+        <form id="requestDate">                     
+          <label>Enter the Date you wish to view:</label>  <br/>                   
+          <input id="year" type="text" placeholder="YYYY"></input>                    
+          <input id="month" type="text" placeholder="MM"></input>                     
+
+          <input id="day" type="text" placeholder="DD"></input>
+          <label> <p>Would you like to save your request?</p>
+            <input type="checkbox">
+          </label>                     
+          <button type="submit" href="/results">Submit</button>                 
+
         </form>
       </section>
       <section class="results tab-content">
@@ -85,6 +108,12 @@
           </ul>
         </nav>
       </section>
+      <section class="history tab-content"></section>
+      <section class="news tab-content">
+        <h1 id="news-header">Top News Stories on this date</h1>
+        <button id="more-news" href="/news">Show More Articles</button>
+      </section>
+
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
         <ul class="about-list">
@@ -142,6 +171,8 @@
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/resultsView.js"></script>
   <script src="scripts/views/requestView.js"></script>
+  <script src="scripts/views/newsView.js"></script>
+  <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/models/routes.js"></script>
 </html>
