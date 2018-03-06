@@ -7,7 +7,8 @@ darkGray: #4E6172 */
 #news-header {
   font-size: 20px;
   color: #DBCA69;
-  margin: 10px 0;
+  margin: 20px 0 30px 0;
+  border-bottom: 2px solid #DBCA69;
 }
 
 #blurb {
@@ -22,6 +23,10 @@ darkGray: #4E6172 */
   margin: 10px 0;
 }
 
+/* #more-news {
+  position: absolute;
+  bottom: 0;
+} */
 
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */
