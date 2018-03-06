@@ -20,11 +20,12 @@ var API_URL = 'http://localhost:3000';
 
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
-    let year = event.target[0].value;
-    let month = event.target[1].value;
-    let day = event.target[2].value;
+    module.d= {};
+    module.d.year = event.target[0].value;
+    module.d.month = event.target[1].value;
+    module.d.day = event.target[2].value;
 
-    $.get(`${API_URL}/nyt/articles/${year}/${month}`)
+    $.get(`${API_URL}/nyt/articles/${module.d.year}/${module.d.month}`)
       .then(News.loadAll)
       // .then(results => console.log(JSON.parse(results.text)));
   })
