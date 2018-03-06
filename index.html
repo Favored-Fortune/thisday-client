@@ -18,7 +18,7 @@
       <p>{{status}}: {{statusText}}</p>
     </script>
     <!-- this is the results template for a known user -->
-    <script id="known-user-template">
+    <script id="known-user-template" type="text/x-handlebars-template">
       <h1 id="results">Welcome back, {{username}}</h1>
       <h2 id="date">This is what happened on {{dateSearched}}</h2>
     
@@ -141,7 +141,7 @@
   <script src="scripts/models/thisday.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/resultsView.js"></script>
-  <!-- <script src="scripts/views/historyView.js"></script> -->
+  <script src="scripts/views/requestView.js"></script>
   <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/models/routes.js"></script>
 </html>

@@ -11,10 +11,13 @@ var app = app || {};
     this.dateSearched = fav_date
   }
 
-  User.checkUser = function(ctx, callback) {
-    User.all.includes(username) ? resultsView.initKnownPage: resultsView.initViewPage;
+  User.checkUser = function(ctx) {
+    console.log(ctx);
+    User.getAll()
+      .then(User.all.includes(ctx.username) ? resultsView.initKnownPage : resultsView.initViewPage)
+      .catch(errorCallback);
     new User(ctx);
-    User.getAll();
+    User.all.push(this);
   };
 
   User.loadAll = rows => User.all = rows.map(user => new User(user));
