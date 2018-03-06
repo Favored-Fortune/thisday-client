@@ -16,7 +16,6 @@
     <script id="error-template" type="text/x-handlebars-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
-
   </head>
   <body>
     <header>
@@ -24,10 +23,7 @@
         <div class="icon-menu"></div>
         <ul id="navLinks">
           <li class="tab">
-            <a href="/" class="icon-home">  Home</a>
-          </li>
-          <li class="tab">
-            <a href="/results" class="icon-stack">  Results</a>
+            <a href="/" class="icon-home">Login/Home</a>
           </li>
           <li class="tab">
             <a href="/aboutUs" class="icon-users">  About Us</a>
@@ -35,18 +31,43 @@
         </ul>
     </header>
     <main>
-      <section class="request tab-content">
 
+      <!-- <section class="request tab-content">
+        <h2>Tell us your favorite day</h2> <a href="/request"></a>
+        <p>Learn more about the news and weather on that day.</p>
+        <form id ="request-form" action="request-form">
+        <label> <p>Pick your date</p>
+          <input type="date" id="date" placeholder="Request Date" required>
+        </label> -->
+        <!-- <label> <p>Enter the desired zip code</p>
+          <input type="number" id="zip" placeholder="Location Zip Code" required>
+        </label> -->
+        <!-- <button type="submit">See your results</button>
+      </section> -->
+      <section class="login login-template tab-content">
+        <a href="/"></a>
+        <form action="user-form" id="user-form">
+          <label for="username"><p>Enter/Choose your username</p>
+            <input type="text" id="username" placeholder="username"required>
+          </label>
+          <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
+            <input type="number" id="pin" placeholder="PIN" required>
+          </label> -->
+          <label for="fav_date" required > <p>Pick your favorte date to see results</p>
+            <input type="date" id="fav_date" placeholder="Favorite Date" required>
+          </label>
+          <button id="submit-user"> <a href="/results">Save My Info</a></button>
+        </form>
       </section>
       <section class="results tab-content">
         <nav id="results-nav">
           <ul id="resLinks">
-            <li class="tab">
+            <!-- <li class="tab">
                 <a href="/results/weather" class="icon-cloud">  Weather</a>
             </li>
             <li class="tab">
                 <a href="/results/events" class="icon-calendar">  Day's Events</a>
-            </li>
+            </li> -->
             <!-- <li class="tab">
                 <a href="/results/history" class="icon-newspaper">  Day Through History</a>
             </li>
@@ -55,26 +76,6 @@
             </li> -->
           </ul>
         </nav>
-      </section>
-      <section class="request tab-content">
-        <h2>Tell us your favorite day</h2> <a href="/request"></a>
-        <p>Learn more about the news, weather and people born on that day in the U.S. location of your choice.</p>
-        <form id ="request-form" action="request-form">
-        <label> <p>Pick your date</p>
-          <input type="date" id="date" placeholder="Request Date" required>
-        </label>
-        <label> <p>Enter the desired zip code</p>
-          <input type="number" id="zip" placeholder="Location Zip Code" required>
-        </label>
-        <label> <p>Would you like to save your request?</p>
-          <input type="checkbox">
-        </label>
-        <br>
-        <button type="submit">Submit and return to the home page</button>
-
-      </section>
-      <section class="history tab-content">
-
       </section>
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
