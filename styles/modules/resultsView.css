@@ -4,7 +4,23 @@ Green: #668D3C
 lightGray: #A3ADB8
 darkGray: #4E6172 */
 
+#news-header {
+  font-size: 20px;
+  color: #DBCA69;
+  margin: 10px 0;
+}
 
+#blurb {
+  font-weight: lighter;
+}
+
+.news-container h1 {
+  font-weight: bolder;
+  font-size: 20px;
+  color: #668D3C;
+  text-shadow: 2px 2px black;
+  margin: 10px 0;
+}
 
 
 
@@ -13,5 +29,7 @@ darkGray: #4E6172 */
 }
 
 @media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
-
+  #news-header {
+    font-size: 30px;
+  }
 }

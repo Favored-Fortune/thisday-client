@@ -18,6 +18,14 @@
       <p>{{status}}: {{statusText}}</p>
     </script>
 
+    <script id="news-template" type="text/x-handlebars-template">
+      <section class="news-container">
+        <h1>{{headline}}</h1>
+        <p id="blurb">{{blurb}}</p>
+        <a href="{{link}}">Read Article</a>
+      </section>
+    </script>
+
   </head>
   <body>
     <header class="main-container">
@@ -42,8 +50,11 @@
           <label>Enter the Date you wish to view:</label>  <br/>                   
           <input id="year" type="text" placeholder="YYYY"></input>                    
           <input id="month" type="text" placeholder="MM"></input>                     
-          <input id="day" type="text" placeholder="DD"></input>                     
-          <button type="submit">Submit</button>                 
+          <input id="day" type="text" placeholder="DD"></input>
+          <label> <p>Would you like to save your request?</p>
+            <input type="checkbox">
+          </label>                     
+          <button type="submit" href="/results">Submit</button>                 
         </form>
       </section>
       <section class="results tab-content">
@@ -64,26 +75,11 @@
           </ul>
         </nav>
       </section>
-      <section class="request tab-content">
-        <h2>Tell us your favorite day</h2> <a href="/request"></a>
-        <p>Learn more about the news, weather and people born on that day in the U.S. location of your choice.</p>
-        <form id ="request-form" action="request-form">
-        <label> <p>Pick your date</p>
-          <input type="date" id="date" placeholder="Request Date" required>
-        </label>
-        <label> <p>Enter the desired zip code</p>
-          <input type="number" id="zip" placeholder="Location Zip Code" required>
-        </label>
-        <label> <p>Would you like to save your request?</p>
-          <input type="checkbox">
-        </label>
-        <br>
-        <button type="submit">Submit and return to the home page</button>
-
+      <section class="history tab-content"></section>
+      <section class="news tab-content">
+        <h1 id="news-header"><strong>Top News Stories on this date</strong></h1>
       </section>
-      <section class="history tab-content">
 
-      </section>
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
         <ul class="about-list">
@@ -140,6 +136,7 @@
   <script src="scripts/models/thisday.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/resultsView.js"></script>
+  <script src="scripts/views/newsView.js"></script>
   <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/models/routes.js"></script>

@@ -30,13 +30,11 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     this.link = object.web_url;
   }
 
-  /*
-
   Article.prototype.toHtml = function() {
-    let template = Handlebars.compile($('#').text());
+    let template = Handlebars.compile($('#news-template').text());
     return template(this);
   }
-  */
+
 
   // loadAll is called after data is received from the server; this function parses the response data, and filters the articles for only the ones on the front page on the specific day. These are then run through the constructor and the objects we will use are then created.
   Article.loadAll = articles => {
@@ -55,13 +53,16 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
   }
 
   // When form is submitted (date entered), the callback function stores the input data and makes a get request to the server for the monthly data from the API
+
+  //TO-DO: do filtering logic on server to only send back daily articles from server
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
     let year = event.target[0].value;
     let locStorMonth = event.target[1].value;
     let day = event.target[2].value;
+    let thisMonth = locStorMonth;
 
-    if (locStorMonth.charAt(0) === '0' && locStorMonth.length === 2) var thisMonth = locStorMonth.charAt(1);
+    if (locStorMonth.charAt(0) === '0' && locStorMonth.length === 2) thisMonth = locStorMonth.charAt(1);
 
     localStorage.setItem('day', day);
     localStorage.setItem('month', locStorMonth);
@@ -69,6 +70,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
+      .then(app.newsView.renderNews);
   })
 
 
