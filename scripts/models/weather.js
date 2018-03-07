@@ -9,6 +9,7 @@ var API_URL = 'http://localhost:3000';
     let things = JSON.parse(data.text);
     things.results
       .map(x => weather.data[x.datatype] = x.value);
+    app.weatherView.renderWeather()
   }
 
   weather.fetch = () => {
