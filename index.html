@@ -17,18 +17,31 @@
     <script id="error-template" type="text/x-handlebars-template">
       <p>{{status}}: {{statusText}}</p>
     </script>
+    <!-- this is the results template for a known user -->
+    <script id="known-user-template" type="text/x-handlebars-template">
+      <h1 id="results">Welcome back, {{username}}</h1>
+      <h2 id="date">This is what happened on {{dateSearched}}</h2>
+    
+    </script>
+
+    <!-- template for new articles -->
+    <script id="news-template" type="text/x-handlebars-template">
+      <section class="news-container">
+        <h1>{{headline}}</h1>
+        <p id="blurb">{{blurb}}</p>
+        <a href="{{link}}">Read Article</a>
+      </section>
+    </script>
 
   </head>
   <body>
-    <header>
+    <header class="main-container">
+      <h1>Welcome to <strong>On This Day</strong>!</h1>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul id="navLinks">
           <li class="tab">
-            <a href="/" class="icon-home">  Home</a>
-          </li>
-          <li class="tab">
-            <a href="/results" class="icon-stack">  Results</a>
+            <a href="/" class="icon-home">Login/Home</a>
           </li>
           <li class="tab">
             <a href="/aboutUs" class="icon-users">  About Us</a>
@@ -36,21 +49,57 @@
         </ul>
     </header>
     <main>
+
+      <!-- <section class="request tab-content">
+        <h2>Tell us your favorite day</h2> <a href="/request"></a>
+        <p>Learn more about the news and weather on that day.</p>
+        <form id ="request-form" action="request-form">
+        <label> <p>Pick your date</p>
+          <input type="date" id="date" placeholder="Request Date" required>
+        </label> -->
+        <!-- <label> <p>Enter the desired zip code</p>
+          <input type="number" id="zip" placeholder="Location Zip Code" required>
+        </label> -->
+        <!-- <button type="submit">See your results</button>
+      </section> -->
+      <section class="login login-template tab-content">
+        <a href="/"></a>
+        <form action="user-form" id="user-form">
+          <label for="username"><p>Enter/Choose your username</p>
+            <input type="text" id="username" placeholder="username"required>
+          </label>
+          <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
+            <input type="number" id="pin" placeholder="PIN" required>
+          </label> -->
+          
+          <button id="login-button">Login</button>
+        </form>
+      </section>
       <section class="request tab-content">
         <form id="requestDate">                     
-          <label>Enter the Date you wish to view:</label>                     
-          <input id="year" type="text" placeholder="YYYY"></input>                    <input id="month" type="text" placeholder="MM"></input>                     <input id="day" type="text" placeholder="DD"></input>                     <button type="submit">Submit</button>                 
+          <label>Enter the Date you wish to view:</label>  <br/>                   
+          <input id="year" type="text" placeholder="YYYY"></input>                    
+          <input id="month" type="text" placeholder="MM"></input>                     
+
+          <input id="day" type="text" placeholder="DD"></input>
+          <br/>
+          <label>
+            <input type="checkbox">Would you like to save your request?
+          </label>          
+          <br/>          
+          <button type="submit" href="/results">Submit</button>                 
+
         </form>
       </section>
       <section class="results tab-content">
         <nav id="results-nav">
           <ul id="resLinks">
-            <li class="tab">
+            <!-- <li class="tab">
                 <a href="/results/weather" class="icon-cloud">  Weather</a>
             </li>
             <li class="tab">
                 <a href="/results/events" class="icon-calendar">  Day's Events</a>
-            </li>
+            </li> -->
             <!-- <li class="tab">
                 <a href="/results/history" class="icon-newspaper">  Day Through History</a>
             </li>
@@ -60,83 +109,51 @@
           </ul>
         </nav>
       </section>
-      <section class="request tab-content">
-        <h2>Tell us your favorite day</h2> <a href="/request"></a>
-        <p>Learn more about the news, weather and people born on that day in the U.S. location of your choice.</p>
-        <form id ="request-form" action="request-form">
-        <label> <p>Pick your date</p>
-          <input type="date" id="date" placeholder="Request Date" required>
-        </label>
-        <label> <p>Enter the desired zip code</p>
-          <input type="number" id="zip" placeholder="Location Zip Code" required>
-        </label>
-        <label> <p>Would you like to save your request?</p>
-          <input type="checkbox">
-        </label>
-        <br>
-        <button type="submit">Submit and return to the home page</button>
-
+      <section class="history tab-content"></section>
+      <section class="news tab-content">
+        <h1 id="news-header">Top News Stories on this date</h1>
+        <button id="more-news" href="/news">Show More Articles</button>
       </section>
-      <section class="history tab-content">
 
-      </section>
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
         <ul class="about-list">
           <li class="person">
             <h3>Brent Williams</h3>
             <li>
-             <a href="https://github.com/wtnerb" class="icon-github">
-              <span class="tooltiptext">Github</span>
-            </a>
+             <a href="https://github.com/wtnerb" class="icon-github"></a>
             </li>
             <li>Bio</li>
           </li>
           <li class="person">
             <h3>Kris Sakarias</h3>
             <li>
-              <a href="https://github.com/kris71990" class="icon-github">
-                <span class="tooltiptext">Github</span>
-              </a>
-              <a href="" class="icon-linkedin">
-                <span class="tooltiptext">Linkedin</span>
-              </a>
+              <a href="https://github.com/kris71990" class="icon-github"></a>
+              <a href="" class="icon-linkedin"></a>
             </li>
             <li>Bio</li>
           </li>
           <li class="person">
             <h3>Mikayla Mehelich</h3>
             <li>
-              <a href="https://github.com/MMehelich" class="icon-github">
-                <span class="tooltiptext">Github</span>
-              </a>
-              <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin">
-                <span class="tooltiptext">Linkedin</span>
-              </a>
+              <a href="https://github.com/MMehelich" class="icon-github"></a>
+              <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin"></a>
             </li>
             <li> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</li>
           </li>
           <li class="person">
             <h3>Steven Starwalt</h3>
             <li>
-              <a href="https://github.com/steveflys" class="icon-github">
-                <span class="tooltiptext">Github</span>
-              </a>
-              <a href="" class="icon-linkedin">
-                <span class="tooltiptext">Linkedin</span>
-              </a>
+              <a href="https://github.com/steveflys" class="icon-github"></a>
+              <a href="" class="icon-linkedin"></a>
             </li>
             <li> Bio</li>
           </li>
           <li class="person">
             <h3>Suzanne Richman</h3>
             <li>
-              <a href="https://github.com/FavoredFortune" class="icon-github">
-                <span class="tooltiptext">Github</span>
-              </a>
-              <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin">
-                <span class="tooltiptext">Linkedin</span>
-              </a>
+              <a href="https://github.com/FavoredFortune" class="icon-github"></a>
+              <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin"></a>
             </li>
             <li>As a full-stack JavaScript I’m keen to help make people’s lives easier.</li>
           </li>
@@ -151,10 +168,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="scripts/views/thisday.js"></script>
+  <!-- <script src="scripts/models/thisday.js"></script> -->
   <script src="scripts/models/news.js"></script>
-  <script src="scripts/models/resultsView.js"></script>
+  <script src="scripts/models/weather.js"></script>
+  <!-- <script src="scripts/views/resultsView.js"></script> -->
+  <script src="scripts/views/requestView.js"></script>
+  <script src="scripts/views/newsView.js"></script>
   <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
-  <script src="scripts/models/routes.js"></script>
+  <script src="scripts/controller/routes.js"></script>
 </html>
