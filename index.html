@@ -18,7 +18,7 @@
       <p>Not getting that page, partner!</p>
       <p>{{status}}: {{statusText}}</p>
     </script>
-    
+
     <!-- this is the results template for a known user -->
     <script id="known-user-template" type="text/x-handlebars-template">
       <h1 id="results">Welcome back, {{username}}</h1>
@@ -52,29 +52,12 @@
         </ul>
     </header>
     <main>
-
-      <!-- <section class="request tab-content">
-        <h2>Tell us your favorite day</h2> <a href="/request"></a>
-        <p>Learn more about the news and weather on that day.</p>
-        <form id ="request-form" action="request-form">
-        <label> <p>Pick your date</p>
-          <input type="date" id="date" placeholder="Request Date" required>
-        </label> -->
-        <!-- <label> <p>Enter the desired zip code</p>
-          <input type="number" id="zip" placeholder="Location Zip Code" required>
-        </label> -->
-        <!-- <button type="submit">See your results</button>
-      </section> -->
       <section class="login login-template tab-content">
         <a href="/"></a>
         <form action="user-form" id="user-form">
           <label for="username"><p>Enter/Choose your username</p>
             <input type="text" id="username" placeholder="username"required>
           </label>
-          <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
-            <input type="number" id="pin" placeholder="PIN" required>
-          </label> -->
-          
           <button id="login-button">Login</button>
         </form>
       </section>
