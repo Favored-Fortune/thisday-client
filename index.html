@@ -15,8 +15,10 @@
     
     <!-- This is the template for error messages -->
     <script id="error-template" type="text/x-handlebars-template">
+      <p>Not getting that page, partner!</p>
       <p>{{status}}: {{statusText}}</p>
     </script>
+    
     <!-- this is the results template for a known user -->
     <script id="known-user-template" type="text/x-handlebars-template">
       <h1 id="results">Welcome back, {{username}}</h1>
@@ -37,6 +39,7 @@
   <body>
     <header class="main-container">
       <h1>Welcome to <strong>On This Day</strong>!</h1>
+      <p>Learn more about the news and weather on a day you choose.</p>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul id="navLinks">
