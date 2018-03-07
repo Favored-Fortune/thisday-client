@@ -1,7 +1,43 @@
 'use strict';
 
-$('')
+var app = app || {};
 
+(module => {
+
+  User.all = [];
+
+  function User (user) {
+    this.username = username,
+    this.dateSearched = fav_date
+  }
+
+  $('#user-form').on('submit', function(event){
+    event.preventDefault();
+    console.log(event.target,'event target')
+    let username = event.target.username.value;
+    console.log(username)
+    module.User.getAll();
+  });
+
+  // User.checkUser = function(ctx) {
+  //   console.log(ctx);
+  //   User.getAll()
+  //     .then(User.all.includes(ctx.username) ? resultsView.initKnownPage : resultsView.initViewPage)
+  //     .catch(errorCallback);
+  //   new User(ctx);
+  //   User.all.push(this);
+  // };
+
+  // User.loadAll = rows => User.all = rows.map(user => new User(user));
+
+  // User.getAll = callback =>
+  //   $.get(`${API_URL}/api/v1/users`, {username})
+  //     .then(User.loadAll)
+  //     // console.log(User.all)
+  // page('/')
+  //   .catch(errorCallback);
+
+})(app)
 // let users = [];
 
 // function User (loginObject) {
@@ -40,4 +76,4 @@ $('')
 //     <input id="userName" name="userName" type="text" required="">
 //     <button id="login">Enter</button>
 //   </form>
-// </fieldset>  
+// </fieldset>
