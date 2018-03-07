@@ -14,8 +14,13 @@ var API_URL = 'http://localhost:3000';
       });
     console.log('Weather Data: ', arr)
   }
-  $.get(`${API_URL}/noaa/weather/${module.d.year}/${module.d.month}/${module.d.day}`)
-    .then(weather.handle)
+  weather.fetch = () => {
+    $.get(`${API_URL}/noaa/weather/${localStorage.year}/${localStorage.month}/${localStorage.day}`)
+      .then(weather.handle)
+  }
 
   module.weather = weather;
 })(app);
+
+    // move to news.js
+   // module.weather.fetch ();
