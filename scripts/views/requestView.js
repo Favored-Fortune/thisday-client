@@ -6,7 +6,6 @@ var app = app || {};
 
   User.all = [];
 
-  // 
   function User (user) {
     this.username = username,
     this.dateSearched = fav_date
