@@ -28,7 +28,14 @@
     <script id="known-user-template" type="text/x-handlebars-template">
       <h1 id="results">Welcome back, {{username}}</h1>
       <h2 id="date">This is what happened on {{dateSearched}}</h2>
-    
+    </script>
+    <!-- template for weather -->
+
+    <script id="weather-template" type="text/x-handlebars-template">
+      <h2>{{weathering}}</h2>
+      <img src={{image}}>
+      <span id="pullLeft">{{minTemp}}&#8457;</span>
+      <span id="pullRight">{{maxTemp}}&#8457;</span>
     </script>
 
     <!-- template for new articles -->
@@ -83,29 +90,15 @@
         </form>
       </section>
       <section class="results tab-content">
-        <nav id="results-nav">
-          <ul id="resLinks">
-            <!-- <li class="tab">
-                <a href="/results/weather" class="icon-cloud">  Weather</a>
-            </li>
-            <li class="tab">
-                <a href="/results/events" class="icon-calendar">  Day's Events</a>
-            </li> -->
-            <!-- <li class="tab">
-                <a href="/results/history" class="icon-newspaper">  Day Through History</a>
-            </li>
-            <li class="tab">
-                <a href="/results/people" class="icon-man-woman">  Celebrities</a>
-            </li> -->
-          </ul>
-        </nav>
+        <div class="weatherCard">
+          <h1>Seattle Weather</h1>
+          <div id="weatherCard"></div>
+        </div>
       </section>
-      <section class="history tab-content"></section>
       <section class="news tab-content">
         <h1 id="news-header">Top News Stories on this date</h1>
         <button id="more-news" href="/news">Show More Articles</button>
       </section>
-
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
         <ul class="about-list">
@@ -150,9 +143,7 @@
           </li>
         </ul> 
       </section>
-      <section class="error-view tab-content">
-
-      </section>
+      <section class="error-view tab-content"></section>
     </main>
     <footer></footer>
   </body>
@@ -166,6 +157,7 @@
   <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
+  <script src="scripts/views/weatherView.js"></script>
   <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
   <script src="scripts/controller/routes.js"></script>

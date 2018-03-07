@@ -8,7 +8,7 @@ var app = app || {};
   
   resultView.initViewPage(ctx) {
        
-
+  
 
 
 })(app)
