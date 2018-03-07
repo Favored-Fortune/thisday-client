@@ -69,6 +69,8 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     localStorage.setItem('month', locStorMonth);
     localStorage.setItem('year', year);
 
+    module.weather.fetch();
+
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
       .then(app.newsView.renderNews);
