@@ -9,7 +9,7 @@ var API_URL = 'http://localhost:3000';
 
   function User (user) {
     this.username = user.username,
-    this.dateSearched = user.date_searched
+    this.datesearched = user.date_searched
   }
 
   $('#user-form').on('submit', function(event){
@@ -21,10 +21,9 @@ var API_URL = 'http://localhost:3000';
   User.checkUser = function(user) {
     const userCheck = User.all.filter(userObj => userObj.username === user)
     if(userCheck.length === 1) {
-      app.initKnownResultsView; 
+      app.requestView.initKnownUser(userCheck);
     }else{
-      app.initResultsView;
-      $.post()
+      app.initRequestView;
     }
   };
 
