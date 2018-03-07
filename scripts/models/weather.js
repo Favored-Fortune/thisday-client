@@ -23,4 +23,4 @@ var API_URL = 'http://localhost:3000';
 })(app);
 
     // move to news.js
-   // module.weather.fetch ();
+    // module.weather.fetch ();
