@@ -8,10 +8,7 @@ var API_URL = 'http://localhost:3000';
     weather.data = {};
     let things = JSON.parse(data.text);
     things.results
-      .filter (x => x.station === things.results[0].station)
-      .map(x => {
-        weather.data[x.datatype] = x.value;
-      });
+      .map(x => weather.data[x.datatype] = x.value);
   }
 
   weather.fetch = () => {
