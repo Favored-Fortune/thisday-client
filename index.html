@@ -24,6 +24,7 @@
     
     </script>
 
+    <!-- template for new articles -->
     <script id="news-template" type="text/x-handlebars-template">
       <section class="news-container">
         <h1>{{headline}}</h1>
@@ -70,10 +71,8 @@
           <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
             <input type="number" id="pin" placeholder="PIN" required>
           </label> -->
-          <label for="fav_date" required > <p>Pick your favorte date to see results</p>
-            <input type="date" id="fav_date" placeholder="Favorite Date" required>
-          </label>
-          <button id="submit-user"> <a href="/results">Save My Info</a></button>
+          
+          <button id="login-button">Login</button>
         </form>
       </section>
       <section class="request tab-content">
@@ -83,9 +82,11 @@
           <input id="month" type="text" placeholder="MM"></input>                     
 
           <input id="day" type="text" placeholder="DD"></input>
-          <label> <p>Would you like to save your request?</p>
-            <input type="checkbox">
-          </label>                     
+          <br/>
+          <label>
+            <input type="checkbox">Would you like to save your request?
+          </label>          
+          <br/>          
           <button type="submit" href="/results">Submit</button>                 
 
         </form>
@@ -167,12 +168,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="scripts/models/thisday.js"></script>
+  <!-- <script src="scripts/models/thisday.js"></script> -->
   <script src="scripts/models/news.js"></script>
-  <script src="scripts/views/resultsView.js"></script>
+  <script src="scripts/models/weather.js"></script>
+  <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
   <!-- <script src="scripts/views/historyView.js"></script> -->
   <!-- <script src="scripts/views/errorView.js"></script> -->
-  <script src="scripts/models/routes.js"></script>
+  <script src="scripts/controller/routes.js"></script>
 </html>

@@ -14,7 +14,8 @@ var API_URL = 'http://localhost:3000';
       });
     console.log('Weather Data: ', arr)
   }
-  $.get(`${API_URL}/noaa/weather/${module.d.year}/${module.d.month}/${module.d.day}`)
+  $.get(`${API_URL}/noaa/weather/${localStorage.year}/${localStorage.month}/${localStorage.day}`)
+  //TODO broken by merge conflict module.d.year etc
     .then(weather.handle)
 
   module.weather = weather;
