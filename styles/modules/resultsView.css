@@ -23,14 +23,11 @@ darkGray: #4E6172 */
   margin: 10px 0;
 }
 
-/* #more-news {
-  position: absolute;
-  bottom: 0;
-} */
-
 .news {
   text-align: justify;
 }
+
+
 
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */

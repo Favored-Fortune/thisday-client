@@ -28,6 +28,7 @@ This view file works with our news.js data to do all the jQuery magic that displ
       module.Article.all.map(article => $('.news').append(article.toHtml()))
       $('.news').fadeIn(750);
     })
+    app.weatherView.renderWeather();
   }
 
   module.newsView = newsView;
