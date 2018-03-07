@@ -3,34 +3,29 @@
 var app = app || {};
 
 (module => {
+  const requestView = {}
 
-  User.all = [];
-
-  function User (user) {
-    this.username = username,
-    this.dateSearched = fav_date
+  requestView.initLoginPage = () => {
+    $('.tab-content').hide();
+    $('.login').fadeIn(750);
   }
 
-  User.checkUser = function(ctx) {
-    console.log(ctx);
-    User.getAll()
-      .then(User.all.includes(ctx.username) ? resultsView.initKnownPage : resultsView.initViewPage)
-      .catch(errorCallback);
-    new User(ctx);
-    User.all.push(this);
+  requestView.initKnownUser = (user) => {
+    console.log(user);
+    $('.tab-content').hide();
+    $('.request').fadeIn(750);
+    let date = user[0].fav_date.split('T')[0].split('-');
+    $('#year').val(date[0]);
+    $('#month').val(date[1]);
+    $('#day').val(date[2]);
   };
 
-  User.loadAll = rows => User.all = rows.map(user => new User(user));
+  requestView.initNewUser = (user) => {
+    $('.tab-content').hide();
+    $('.request').fadeIn(750);
 
-  User.getAll = callback =>
-    $.get(`${__API_URL__}/api/v1/users`)
-      .then(User.loadAll)
-      .catch(errorCallback);
-  const resultView = {};
-  
-  // resultView.initViewPage(ctx) {
-       
-  // }
+  }
 
-
+  module.requestView = requestView;
 })(app)
+
