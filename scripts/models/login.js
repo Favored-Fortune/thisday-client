@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-// var API_URL = 'http://localhost:3000';
-var API_URL = 'https://git.heroku.com/this-day';
+var API_URL = 'http://localhost:3000';
+//var API_URL = 'https://git.heroku.com/this-day';
 
 (module => {
 
@@ -44,6 +44,15 @@ var API_URL = 'https://git.heroku.com/this-day';
         callback(username)
       })
       .catch(console.error);
+  }
+
+  User.forget = () =>{
+    // username is a placeholder. I want to use localStorage for this problem.
+    // check line 33 post request. vi or v1?
+    $.ajax({
+      url: `${API_URL}/api/v1/users/${localStorage.username}`,
+      method: 'DELETE'
+    })
   }
 
   module.User = User;
