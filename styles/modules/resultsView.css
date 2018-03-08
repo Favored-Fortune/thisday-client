@@ -58,6 +58,7 @@ darkGray: #4E6172 */
 
 #forget {
   float: right;
+  visibility: hide;
 }
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */
