@@ -27,6 +27,10 @@ darkGray: #4E6172 */
   text-align: justify;
 }
 
+#newsLoading{
+  
+}
+
 .weatherCard {
   border-bottom: 1px solid #DBCA69;
 }
@@ -54,6 +58,10 @@ darkGray: #4E6172 */
 .weatherCard #pullRight{
   float: right;
   margin: 150px 10px 10px 0;
+}
+
+#weatherLoading{
+
 }
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */

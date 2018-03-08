@@ -38,6 +38,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   // loadAll is called after data is received from the server; this function parses the response data, and filters the articles for only the ones on the front page on the specific day. These are then run through the constructor and the objects we will use are then created.
   Article.loadAll = articles => {
+    // $('#newsLoading').hide();
     let data = JSON.parse(articles.text);
     let day = localStorage.getItem('day');
     let month = localStorage.getItem('month');
@@ -58,6 +59,8 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
+    $('#weatherLoading').show();
+    $('#newsLoading').show();
     let year = event.target[0].value;
     let locStorMonth = event.target[1].value;
     let day = event.target[2].value;
@@ -76,6 +79,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
     module.weather.fetch();
 
+    // $('#newsLoading').show();
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
       .then(app.newsView.renderNews);
