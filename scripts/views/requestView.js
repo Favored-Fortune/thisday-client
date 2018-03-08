@@ -8,6 +8,7 @@ var app = app || {};
   requestView.initLoginPage = () => {
     $('.tab-content').hide();
     $('.login').fadeIn(750);
+    $('#aboutUs').on('click', app.requestView.initAboutPage);
   }
 
   requestView.initKnownUser = (user) => {
@@ -23,7 +24,11 @@ var app = app || {};
   requestView.initNewUser = (user) => {
     $('.tab-content').hide();
     $('.request').fadeIn(750);
+  }
 
+  requestView.initAboutPage = () => {
+    $('.tab-content').hide();
+    $('.aboutUs').fadeIn(750);
   }
 
   module.requestView = requestView;

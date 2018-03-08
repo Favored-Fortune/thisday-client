@@ -14,8 +14,8 @@ var API_URL = 'http://localhost:3000';
 
   $('#user-form').on('submit', function(event){
     event.preventDefault();
-    let username = event.target.username.value;
-    User.getAll(User.checkUser, username);
+    localStorage.username = event.target.username.value;
+    User.getAll(User.checkUser, localStorage.username);
   });
 
   User.checkUser = function(user) {
@@ -28,6 +28,7 @@ var API_URL = 'http://localhost:3000';
     }else{
       app.requestView.initNewUser(user);
       $('#requestDate').on('submit', function(event, user){
+
         $.post(`${API_URL}/api/vi/newUser/`)
       })
     }
@@ -43,6 +44,7 @@ var API_URL = 'http://localhost:3000';
       })
       .catch(console.error);
   }
+
   module.User = User;
 
 })(app)
