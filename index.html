@@ -51,7 +51,6 @@
   <body>
     <header class="main-container">
       <h1>Welcome to <strong>On This Day</strong>!</h1>
-      <p>Learn more about the news and weather on a day you choose.</p>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul id="navLinks">
@@ -59,11 +58,14 @@
             <a href="/" class="icon-home">Login/Home</a>
           </li>
           <li class="tab">
-            <a class="icon-users" id="aboutUs">  About Us</a>
+            <a href="/about" class="icon-users" id="aboutUs">About Us</a>
           </li>
         </ul>
     </header>
     <main>
+      <section id="currentDate"></section>
+      <section id="chosenDate" class="tab-content"></section>
+      <p>Log in to select a date from the past.</p>
       <section class="login login-template tab-content">
         <!-- <a href="/"></a> -->
         <form id="user-form">
@@ -149,7 +151,7 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
-  <!-- <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script> -->
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/login.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/models/weather.js"></script>
@@ -158,6 +160,6 @@
   <script src="scripts/views/newsView.js"></script>
   <script src="scripts/views/weatherView.js"></script>
   <script src="scripts/views/errorView.js"></script>
-  <!-- <script src="scripts/controller/routes.js"></script> -->
+  <script src="scripts/controller/routes.js"></script>
   <script>app.requestView.initLoginPage();</script>
 </html>

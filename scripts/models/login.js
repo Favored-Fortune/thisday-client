@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-// var API_URL = 'http://localhost:3000';
-var API_URL = 'https://git.heroku.com/this-day';
+var API_URL = 'http://localhost:3000';
+// var API_URL = 'https://git.heroku.com/this-day';
 
 (module => {
 
@@ -28,10 +28,10 @@ var API_URL = 'https://git.heroku.com/this-day';
       app.requestView.initKnownUser(userCheck);
     }else{
       app.requestView.initNewUser(user);
-      $('#requestDate').on('submit', function(event, user){
+      // $('#requestDate').on('submit', function(event, user){
 
-        $.post(`${API_URL}/api/vi/newUser/`)
-      })
+      //   $.post(`${API_URL}/api/vi/newUser/`)
+      // })
     }
   };
 

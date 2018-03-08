@@ -6,14 +6,22 @@ var app = app || {};
   const requestView = {}
 
   requestView.initLoginPage = () => {
+    let currentDate = new Date;
     $('.tab-content').hide();
-    $('.login').fadeIn(750);
-    $('#aboutUs').on('click', app.requestView.initAboutPage);
+    $('#currentDate').empty();
+    $('#currentDate').hide();
+    $('main > p').hide();
+    $('#currentDate').append('The current date is: ' + currentDate.toDateString());
+    $('#currentDate').fadeIn(500);
+    $('main > p').fadeIn(750);
+    $('.login').fadeIn(1000);
+    // $('#aboutUs').on('click', app.requestView.initAboutPage);
   }
 
   requestView.initKnownUser = (user) => {
     console.log(user);
     $('.tab-content').hide();
+    $('main > p').hide();
     $('.request').fadeIn(750);
     let date = user[0].fav_date.split('T')[0].split('-');
     $('#year').val(date[0]);
@@ -29,6 +37,12 @@ var app = app || {};
   requestView.initAboutPage = () => {
     $('.tab-content').hide();
     $('.aboutUs').fadeIn(750);
+  }
+
+  requestView.showDate = () => {
+    let currentDate = new Date;
+    $('.tab-content').hide();
+    $('#currentDate').append(currentDate.toDateString());
   }
 
   module.requestView = requestView;

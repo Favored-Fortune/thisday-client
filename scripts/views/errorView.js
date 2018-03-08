@@ -7,9 +7,10 @@ var app = app || {};
   errorView.initErrorPage = function () {
     $('.tab-content').hide();
     $('.error-view').show();
-    $('#error-message').empty();
+    $('.error-view').empty();
     let template = Handlebars.compile($('#error-template').text());
-    $('#error-message').append(template(err));
+    $('.error-view').append(template(this));
   };
+
   module.errorView = errorView;
 })(app);

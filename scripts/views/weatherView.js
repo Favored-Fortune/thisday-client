@@ -7,7 +7,7 @@ var app = app || {};
 
   weatherView.renderWeather = () => {
     //$('.tab-content').hide();
-    $('.results').fadeIn(750);
+    $('.results').hide();
     // jQuery stuff hide/show/etc.
     // call Weather.toHtml to render template
 
@@ -34,6 +34,7 @@ var app = app || {};
     //return template(this);
 
     $('#weatherCard').empty().append(template(obj));
+    // $('.results').fadeIn(750);
 
   }
 
