@@ -60,6 +60,10 @@
           </div>
         </header>
     <main>
+      <section id="currentDate"></section>
+      <section id="forget"><button>forget me</button></section>
+      <section id="chosenDate" class="tab-content"></section>
+      <p>Log in to select a date from the past.</p>
       <section class="login login-template tab-content">
         <p>Learn more about the news and weather on a day you choose.</p>        
         <form id="user-form">
@@ -78,18 +82,20 @@
           <input id="day" type="text" placeholder="DD"></input>
           <br/>
           <label>
-            <input type="checkbox">Would you like to save your request?
+            <input type="checkbox" id="save-date">Would you like to save your request?
           </label>          
           <br/>          
           <button type="submit" href="/results">Submit</button>                 
         </form>
       </section>
+      <img id="weatherLoading" class="tab-content" src="images/loadingCloud.gif"></img>
       <section class="results tab-content">
         <div class="weatherCard">
           <h1>Seattle Weather</h1>
           <div id="weatherCard"></div>
         </div>
       </section>
+      <img id="newsLoading" class="tab-content" src="images/loadingNewspaper.gif"></img>
       <section class="news tab-content">
         <h1 id="news-header">Top News Stories on this date</h1>
         <button id="more-news" href="/news">Show More Articles</button>
@@ -99,29 +105,35 @@
         <div class="person-container">
           <div class="person">
             <h3>Brent Williams</h3>
+            <div class="image-size"><img src="images/BrentWilliams.png"></div>
             <a href="https://github.com/wtnerb" class="icon-github"></a>
-            <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae aliquet libero. Ut vel nisi leo. Sed vitae vulputate neque. </p>
+            <a href="https://www.linkedin.com/in/wtnerb/"  class="icon-linkedin"></a>
+            <p id="bio">I am a C# web developer, though I know more js than I’d like. I studied physics at WSU, and love dogs. I’m trying to move to being a backend developer because I’ve always loved solving problems, whether it be math, physics, chess or algorithms.</p>
           </div>
           <div class="person">
             <h3>Kris Sakarias</h3>
-              <a href="https://github.com/kris71990" class="icon-github"></a>
-              <a href="" class="icon-linkedin"></a>
-            <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae aliquet libero. Ut vel nisi leo. Sed vitae vulputate neque. </p>
+            <div class="image-size"><img src="images/KrisSakarias.png"></div>
+            <a href="https://github.com/kris71990" class="icon-github"></a>
+            <a href="https://www.linkedin.com/in/kris-sakarias/" class="icon-linkedin"></a>
+            <p id="bio">I am a full-stack Javascript developer whose interests include reading, traveling, and eating interesting food.</p>
           </div>
           <div class="person">
             <h3>Mikayla Mehelich</h3>
+            <div class="image-size"><img src="images/MikaylaMehelich.jpg"></div>
             <a href="https://github.com/MMehelich" class="icon-github"></a>
             <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin"></a>
             <p id="bio"> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</p>
           </div>
           <div class="person">
             <h3>Steven Starwalt</h3>
+            <div class="image-size"><img src="images/StevenStarwalt.jpg"></div>
             <a href="https://github.com/steveflys" class="icon-github"></a>
-            <a href="" class="icon-linkedin"></a>
-            <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae aliquet libero. Ut vel nisi leo. Sed vitae vulputate neque.</p>
+            <a href="https://www.linkedin.com/in/steven-starwalt-9077a7157/" class="icon-linkedin"></a>
+            <p id="bio">Steve's first career was as a Navy Submariner.  He retired as a Command Master Chief and started his second career in wood door manufacturing.  He is at Code Fellows to begin his third career as a python coder.  His other passions include his wife, 2 dogs & zoo, rescuing anything that walks, flys, or crawls, scuba diving, and paragliding.</p>
           </div>
           <div class="person">
             <h3>Suzanne Richman</h3>
+            <div class="image-size"><img src="images/SuzanneRichman.png"></div>
             <a href="https://github.com/FavoredFortune" class="icon-github"></a>
             <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin"></a>
             <p id="bio">As a full-stack JavaScript I’m keen to help make people’s lives easier.</p>
@@ -133,17 +145,15 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
-  <!-- <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script> -->
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/login.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/models/weather.js"></script>
-  <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
   <script src="scripts/views/weatherView.js"></script>
   <script src="scripts/views/errorView.js"></script>
-  <!-- <script src="scripts/controller/routes.js"></script> -->
-  <script>app.requestView.initLoginPage();</script>
+  <script src="scripts/controller/routes.js"></script>
   <script>
     function dropNav() {
       var drop = document.getElementById("topNav");
