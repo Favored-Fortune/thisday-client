@@ -15,7 +15,7 @@ var app = app || {};
     $('#currentDate').fadeIn(500);
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
-    // $('#aboutUs').on('click', app.requestView.initAboutPage);
+    $('#aboutUs').on('click', app.requestView.initAboutPage);
 
   }
 
