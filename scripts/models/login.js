@@ -35,14 +35,6 @@ var API_URL = 'http://localhost:3000';
     }
   };
 
-  User.add = () => {
-    $.ajax({
-      method: 'POST',
-      url: `${API_URL}/api/v1/users/${localStorage.username}`,
-    }).then ()
-      .catch(console.error)
-  }
-
   User.loadAll = rows => User.all = rows.map(user => new User(user));
 
   User.getAll = (callback, username) => {
