@@ -25,8 +25,6 @@ var API_URL = 'http://localhost:3000';
       app.requestView.initKnownUser(userCheck);
     }else{
       app.requestView.initNewUser(loginName);
-      console.log(user);
-      
       $('#requestDate').on('submit', function(event) {
         event.preventDefault();
         let user = {
