@@ -2,7 +2,7 @@
 
 var app = app || {};
 // var API_URL = 'http://localhost:3000';
-var API_URL = 'https://this-day.herokuapp.com/';
+var API_URL = 'https://this-day.herokuapp.com';
 
 (module => {
 
