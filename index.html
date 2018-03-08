@@ -59,7 +59,7 @@
             <a href="/" class="icon-home">Login/Home</a>
           </li>
           <li class="tab">
-            <a href="/aboutUs" class="icon-users">  About Us</a>
+            <a class="icon-users" id="aboutUs">  About Us</a>
           </li>
         </ul>
     </header>
@@ -149,16 +149,15 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <!-- <script src="scripts/models/thisday.js"></script> -->
+  <!-- <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script> -->
+  <script src="scripts/models/login.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/models/weather.js"></script>
-  <script src="scripts/models/login.js"></script>
   <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
   <script src="scripts/views/weatherView.js"></script>
-  <!-- <script src="scripts/views/historyView.js"></script> -->
-  <!-- <script src="scripts/views/errorView.js"></script> -->
-  <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/views/errorView.js"></script>
+  <!-- <script src="scripts/controller/routes.js"></script> -->
+  <script>app.requestView.initLoginPage();</script>
 </html>
