@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-var API_URL = 'http://localhost:3000';
-// var API_URL = 'https://git.heroku.com/this-day';
+// var API_URL = 'http://localhost:3000';
+var API_URL = 'https://git.heroku.com/this-day';
 /*
 
 We should create a file similar to this for each of our data sets (NYT, Weather, Famous People, etc) - a model that is a property of our app where ajax requests are made and data is received from the server and run through a constructor if necessary.
