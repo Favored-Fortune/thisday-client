@@ -37,6 +37,8 @@ As a developer, I want to have a strech goal of offering the user a star chart f
 * eslintrc from CF301 class repo
 * Erik Meyer for reset.css under MIT license
 * StackOverflow for event listener on checkbox
+* Documentation for page.js https://visionmedia.github.io/page.js/
+* Logojoy for logo generation https://logojoy.com/
 
 
 
