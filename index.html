@@ -60,6 +60,9 @@
           </div>
         </header>
     <main>
+      <section id="currentDate"></section>
+      <section id="chosenDate" class="tab-content"></section>
+      <p>Log in to select a date from the past.</p>
       <section class="login login-template tab-content">
         <p>Learn more about the news and weather on a day you choose.</p>        
         <form id="user-form">
@@ -143,7 +146,6 @@
   <script src="scripts/views/weatherView.js"></script>
   <script src="scripts/views/errorView.js"></script>
   <script src="scripts/controller/routes.js"></script>
-  <!-- <script src="scripts/controller/routes.js"></script> -->
   <script>app.requestView.initLoginPage();</script>
   <script>
     function dropNav() {

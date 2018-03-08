@@ -16,19 +16,25 @@ This view file works with our news.js data to do all the jQuery magic that displ
   const newsView = {}
 
   newsView.renderNews = () => {
+    app.weatherView.renderWeather();
     $('.tab-content').hide();
-    // jQuery stuff hide/show/etc.
-    // call Article.toHtml to render template
+    $('.news').hide();
+
     module.Article.all.map(article => $('.news').append(article.toHtml()))
+    $('#chosenDate').text(`Your chosen date was ${localStorage.month}/${localStorage.day}/${localStorage.year}`);
+    $('#chosenDate').fadeIn(750)
     $('.news').fadeIn(750);
+    $('.results').fadeIn(750);
     $('.news-container:gt(2)').hide();
+    
     $('#more-news').on('click', function() {
       $('.tab-content').hide();
+      $('.news').hide();
       $('.news').empty();
       module.Article.all.map(article => $('.news').append(article.toHtml()))
       $('.news').fadeIn(750);
+      $('.results').fadeIn(750);
     })
-    app.weatherView.renderWeather();
   }
 
   module.newsView = newsView;

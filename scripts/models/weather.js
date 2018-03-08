@@ -1,7 +1,8 @@
 'use strict'
 
 var API_URL = 'http://localhost:3000';
-//var API_URL = 'https://git.heroku.com/this-day';
+
+// var API_URL = 'https://git.heroku.com/this-day';
 
 (module => {
   let weather = {};
