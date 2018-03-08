@@ -16,7 +16,7 @@ var app = app || {};
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
     $('#aboutUs').on('click', app.requestView.initAboutPage);
-
+    $('#username').val('');
   }
 
   requestView.initKnownUser = (user) => {
@@ -33,6 +33,9 @@ var app = app || {};
   requestView.initNewUser = (user) => {
     $('.tab-content').hide();
     $('.request').fadeIn(750);
+    $('#year').val('');
+    $('#month').val('');
+    $('#day').val('');
   }
 
   requestView.initAboutPage = () => {

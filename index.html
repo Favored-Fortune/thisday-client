@@ -61,6 +61,7 @@
         </header>
     <main>
       <section id="currentDate"></section>
+      <section id="forget"><button>forget me</button></section>
       <section id="chosenDate" class="tab-content"></section>
       <p>Log in to select a date from the past.</p>
       <section class="login login-template tab-content">
@@ -148,13 +149,11 @@
   <script src="scripts/models/login.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/models/weather.js"></script>
-  <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
   <script src="scripts/views/weatherView.js"></script>
   <script src="scripts/views/errorView.js"></script>
   <script src="scripts/controller/routes.js"></script>
-  <script>app.requestView.initLoginPage();</script>
   <script>
     function dropNav() {
       var drop = document.getElementById("topNav");

@@ -62,14 +62,14 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     $('#weatherLoading').show();
     $('#newsLoading').show();
     let year = event.target[0].value;
-    let locStorMonth = event.target[1].value;
+    let month = event.target[1].value;
     let day = event.target[2].value;
-    let thisMonth = locStorMonth;
+    let thisMonth = month;
 
-    if (locStorMonth.charAt(0) === '0' && locStorMonth.length === 2) thisMonth = locStorMonth.charAt(1);
+    if (month.charAt(0) === '0' && month.length === 2) thisMonth = month.charAt(1);
 
     localStorage.setItem('day', day);
-    localStorage.setItem('month', locStorMonth);
+    localStorage.setItem('month', month);
     localStorage.setItem('year', year);
 
     if ($('#save-date')[0].checked) {
@@ -82,7 +82,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     // $('#newsLoading').show();
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
-      .then(app.newsView.renderNews);
+      .then(app.newsView.renderNews)
   })
 
 

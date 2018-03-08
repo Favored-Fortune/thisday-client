@@ -36,8 +36,10 @@ var API_URL = 'http://localhost:3000';
         let newUser = new User(user);
         console.log(newUser);
         User.create(newUser);
+        User.all.push(newUser);
       })
     }
+    $('#forget button').on('click', module.User.forget)
   }
 
   User.create = (newUser) =>

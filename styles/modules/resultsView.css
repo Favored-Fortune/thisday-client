@@ -60,7 +60,12 @@ darkGray: #4E6172 */
   margin: 150px 10px 10px 0;
 }
 
+
 #weatherLoading{
+}
+
+#forget {
+  float: right;
 
 }
 
