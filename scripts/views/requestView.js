@@ -15,7 +15,20 @@ var app = app || {};
     $('#currentDate').fadeIn(500);
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
-    // $('#aboutUs').on('click', app.requestView.initAboutPage);
+    // $('.topnav').on('click', requestView.dropNav);
+    // let dropNav = () => {
+    //   var drop = document.getElementById("topNav");
+    //   if (drop.className === "topNav") {
+    //     drop.className += " responsive";
+    //   } else {
+    //     drop.className = "topNav";
+    //   }
+    // }
+    // requestView.dropNav = () => {
+    //   $('.topNav').attr('class', 'responsive');
+    // }
+
+    $('#aboutUs').on('click', app.requestView.initAboutPage);
 
   }
 
