@@ -15,21 +15,9 @@ var app = app || {};
     $('#currentDate').fadeIn(500);
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
-    // $('.topnav').on('click', requestView.dropNav);
-    // let dropNav = () => {
-    //   var drop = document.getElementById("topNav");
-    //   if (drop.className === "topNav") {
-    //     drop.className += " responsive";
-    //   } else {
-    //     drop.className = "topNav";
-    //   }
-    // }
-    // requestView.dropNav = () => {
-    //   $('.topNav').attr('class', 'responsive');
-    // }
 
     $('#aboutUs').on('click', app.requestView.initAboutPage);
-
+    $('#username').val('');
   }
 
   requestView.initKnownUser = (user) => {
@@ -46,6 +34,9 @@ var app = app || {};
   requestView.initNewUser = (user) => {
     $('.tab-content').hide();
     $('.request').fadeIn(750);
+    $('#year').val('');
+    $('#month').val('');
+    $('#day').val('');
   }
 
   requestView.initAboutPage = () => {
