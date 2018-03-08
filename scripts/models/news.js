@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-// var API_URL = 'http://localhost:3000';
-var API_URL = 'https://git.heroku.com/this-day';
+var API_URL = 'http://localhost:3000';
+//var API_URL = 'https://git.heroku.com/this-day';
 
 /*
 
@@ -69,6 +69,11 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     localStorage.setItem('day', day);
     localStorage.setItem('month', locStorMonth);
     localStorage.setItem('year', year);
+
+    if ($('#save-date')[0].checked) {
+      console.log('checked');
+      app.User.update()
+    }
 
     module.weather.fetch();
 
