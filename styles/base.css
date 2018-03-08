@@ -3,9 +3,10 @@
 }
 
 body{
-  margin: 30px;
+  /* margin: 30px; */
   background:#4E6172;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* colors: 
@@ -13,3 +14,4 @@ Yellow: #DBCA69
 Green: #668D3C
 lightGray: #A3ADB8
 darkGray: #4E6172 */
+
