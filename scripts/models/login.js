@@ -37,7 +37,7 @@ var API_URL = 'http://localhost:3000';
 
   User.add = () => {
     $.ajax({
-      method: 'PUT',
+      method: 'POST',
       url: `${API_URL}/api/v1/users/${localStorage.username}`,
     }).then ()
       .catch(console.error)
@@ -66,6 +66,17 @@ var API_URL = 'http://localhost:3000';
     })
       .then(module.requestView.initLoginPage())
       .catch(console.error);
+  }
+
+  User.update = () => {
+    $.ajax({
+      url: `${API_URL}/api/v1/users`,
+      method: 'PUT',
+      data: {
+        username: localStorage.username,
+        date: `${localStorage.year}-${localStorage.month}-${localStorage.day}`,
+      }
+    })
   }
 
   module.User = User;
