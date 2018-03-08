@@ -9,6 +9,7 @@ var API_URL = 'http://localhost:3000';
 
   function User (user) {
     this.username = user.username,
+    this.pin = user.pin,
     this.fav_date = user.fav_date
   }
 
@@ -18,21 +19,32 @@ var API_URL = 'http://localhost:3000';
     User.getAll(User.checkUser, localStorage.username);
   });
 
-  User.checkUser = function(user) {
-    console.log(User.all);
-    console.log(user);
-    const userCheck = User.all.filter(userObj => userObj.username === user)
-    console.log(userCheck);
+  User.checkUser = function(loginName) {
+    const userCheck = User.all.filter(userObj => userObj.username === loginName)
     if(userCheck.length === 1) {
       app.requestView.initKnownUser(userCheck);
     }else{
-      app.requestView.initNewUser(user);
-      $('#requestDate').on('submit', function(event, user){
-
-        $.post(`${API_URL}/api/vi/newUser/`)
+      app.requestView.initNewUser(loginName);
+      console.log(user);
+      
+      $('#requestDate').on('submit', function(event) {
+        event.preventDefault();
+        let user = {
+          username: loginName,
+          pin: '0000',
+          fav_date: `${event.target.year.value}-${event.target.month.value}-${event.target.day.value}`
+        };
+        let newUser = new User(user);
+        console.log(newUser);
+        User.create(newUser);
       })
     }
-  };
+  }
+
+  User.create = (newUser) =>
+    $.post(`${API_URL}/api/v1/newUser`, newUser)
+      .then(console.log('post'))
+      .catch(console.error);
 
   User.loadAll = rows => User.all = rows.map(user => new User(user));
 
