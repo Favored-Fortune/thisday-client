@@ -1,22 +1,40 @@
+
 /* colors: 
 Yellow: #DBCA69
 Green: #668D3C
 lightGray: #A3ADB8
 darkGray: #4E6172 */
-.aboutUs h1{
+.aboutUs{
+  margin:30px;
+}
+.aboutUs span{
   font-size: 20px;
+  text-decoration: underline;
 }
 
 [class^="icon-"]{
   font-size: 25px;
 }
 
+#bio{
+  margin:10px 0 0 0;
+}
+
 strong{
   font-weight: bold;
 }
 
+.person-container{
+  margin:10px 0;
+}
+
 .person{
-  margin:20px 0 10px 0;
+  margin:10px 0 10px 0;
+  border: 6px groove #A3ADB8;
+  float: left;
+  padding: 5px;
+  background-color:#A3ADB8;
+  color: #000;
 }
 
 .person h3{
@@ -24,14 +42,45 @@ strong{
   font-size: 20px;
 }
 
-@media only screen and (min-width: 640px){ /* TABLET VIEWS */
+@media only screen and (min-width: 471px){ /* TABLET VIEWS */
   [class^="icon-"]{
     font-size: 30px;
   }
+  .person{
+    width: 100%;
+  }
+
+  .aboutUs span{
+    font-size:30px;
+  }
+ 
 }
 
-@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+@media only screen and (min-width: 800px){ /* DESKTOP VIEWS */
   [class^="icon-"]{
     font-size: 35px;
   }
+
+  .aboutUs span{
+    font-size: 30px;
+  }
+
+  .person{
+    flex:1;
+  }
+
+  .person-container{
+    margin: 20px 0;
+    display: flex;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  .image-size {
+    height: 200px;
+    width: auto;
+  }
 }
+

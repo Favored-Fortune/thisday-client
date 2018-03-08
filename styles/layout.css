@@ -6,24 +6,37 @@ Green: #668D3C
 lightGray: #A3ADB8
 darkGray: #4E6172 */
 
-nav a, header h1{
+.main-container span, header h1{
   font-family: 'Merienda One', cursive;
-  
 }
 
-li a{
-  text-decoration: none;
+header h1{
+  font-size: 30px;
+  margin: 0 0 0 10px;
 }
 
-/* .tab-content{
-  display:none;
-} */
+hr{
+  width:380px;
+  margin:-3px 0 0 5px;
+}
 
 .main-container{
   width:100%;
-  height: 40px;
+  height: 70px;
   padding: 15px;
   background-color:#668D3C;
+}
+
+.topNav a{
+  text-decoration: none;
+  font-size: 20px; 
+  margin-top:10px;
+  padding: 0 0 0 25px;
+  color:white
+}
+
+.topNav{
+  margin: 15px 0 0 -10px;
 }
 
 .icon-menu{
@@ -31,65 +44,99 @@ li a{
   color: #fff;
 }
 
-.main-nav .tab{
-  display: inline;
-  position: relative;
-}
-
-.main-nav:hover .tab{
-  font-size: 20px;
-}
-
-.tab a{
-  text-decoration: none;
-  font-size: 30px; 
-  padding: 0 0 0 25px;
-  color:white
-}
-
-@media only screen and (min-width: 840px){ /* TABLET VIEWS */
-  .icon-menu {
-    display: visible;
-    position: absolute;
-    right: 45px;
-    top: 55px;
-    font-size: 40px;
+@media only screen and (max-width: 800px){ /* TABLET VIEWS */
+  header h1{
+    font-size: 30px;
+    float:left;
+    margin-left:20px;
   }
-}
-
-@media only screen and (max-width: 420px){ /*PHONE VIEWS*/
- 
-
-  .main-nav{
-    display: inline-block; 
+  
+  hr{
+    width:380px;
+    margin: 30px 0 0 -376px;
+    float:left
   }
 
-  .tab{
-  list-style-type: none;
-  float: left;
-  padding: 10px;
-}
+  .main-container{
+    height:30px;
+  }
 
-  .tab {
+  .topNav a{
+    font-size: 20px;
     display: none;
   }
 
-  .main-nav:hover {
-    width: 100%;
-    padding: 0 0 15px 0;
-  }
-
-  .main-nav:hover ul{
-    width: 100%;
-  }
-
-  .main-nav:hover .tab{
+  .icon-menu{
     display: block;
-    font-size: 20px;
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid #fff;
-    padding: 20px 0;
-    background-color:#668D3C;
+    float: right;
+    margin:-15px 30px 0 0;
   }
+
+  .topNav.responsive {
+    position: relative;
+    background-color: #668D3C;
+    padding:10px 25px;
+    margin-top:37px;
+    
+  }
+  .topNav.responsive .icon-menu {
+    position: absolute;
+    right: 0;
+    top: -22px;
+  }
+  .topNav.responsive a {
+  	clear:left;
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 470px){ /*PHONE VIEWS*/
+  header h1{
+    font-size: 20px;
+    float:left;
+    margin-left:20px;
+  }
+  
+  hr{
+    width:255px;
+    margin: -3px 0 0 16px;
+    float:left
+  }
+
+  .main-container{
+    height:20px;
+  }
+
+  .topNav a{
+    font-size: 20px;
+    display: none;
+  }
+
+  .icon-menu{
+    display: block;
+    float: right;
+    margin:-23px 30px 0 0;
+  }
+
+  .topNav.responsive {
+    position: relative;
+    background-color: #668D3C;
+    padding:10px 25px;
+    margin-top:25px;
+    
+  }
+  .topNav.responsive .icon-menu {
+    position: absolute;
+    right: 0;
+    top: -5px;
+  }
+  .topNav.responsive a {
+  	clear:left;
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
 }

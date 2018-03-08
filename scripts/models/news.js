@@ -3,7 +3,6 @@
 var app = app || {};
 // var API_URL = 'http://localhost:3000';
 var API_URL = 'https://git.heroku.com/this-day';
-
 /*
 
 We should create a file similar to this for each of our data sets (NYT, Weather, Famous People, etc) - a model that is a property of our app where ajax requests are made and data is received from the server and run through a constructor if necessary.
@@ -39,6 +38,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   // loadAll is called after data is received from the server; this function parses the response data, and filters the articles for only the ones on the front page on the specific day. These are then run through the constructor and the objects we will use are then created.
   Article.loadAll = articles => {
+    // $('#newsLoading').hide();
     let data = JSON.parse(articles.text);
     let day = localStorage.getItem('day');
     let month = localStorage.getItem('month');
@@ -59,22 +59,30 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
+    $('#weatherLoading').show();
+    $('#newsLoading').show();
     let year = event.target[0].value;
-    let locStorMonth = event.target[1].value;
+    let month = event.target[1].value;
     let day = event.target[2].value;
-    let thisMonth = locStorMonth;
+    let thisMonth = month;
 
-    if (locStorMonth.charAt(0) === '0' && locStorMonth.length === 2) thisMonth = locStorMonth.charAt(1);
+    if (month.charAt(0) === '0' && month.length === 2) thisMonth = month.charAt(1);
 
     localStorage.setItem('day', day);
-    localStorage.setItem('month', locStorMonth);
+    localStorage.setItem('month', month);
     localStorage.setItem('year', year);
+
+    if ($('#save-date')[0].checked) {
+      console.log('checked');
+      app.User.update()
+    }
 
     module.weather.fetch();
 
+    // $('#newsLoading').show();
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
-      .then(app.newsView.renderNews);
+      .then(app.newsView.renderNews)
   })
 
 
