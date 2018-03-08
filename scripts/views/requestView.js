@@ -8,6 +8,7 @@ var app = app || {};
   requestView.initLoginPage = () => {
     $('.tab-content').hide();
     $('.login').fadeIn(750);
+    $('#username').val('');
     $('#aboutUs').on('click', app.requestView.initAboutPage);
   }
 

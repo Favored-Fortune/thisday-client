@@ -35,24 +35,37 @@ var API_URL = 'http://localhost:3000';
     }
   };
 
+  User.add = () => {
+    $.ajax({
+      method: 'PUT',
+      url: `${API_URL}/api/v1/users/${localStorage.username}`,
+    }).then ()
+      .catch(console.error)
+  }
+
   User.loadAll = rows => User.all = rows.map(user => new User(user));
 
   User.getAll = (callback, username) => {
     $.get(`${API_URL}/api/v1/users`)
       .then((results) => {
-        User.loadAll(results)
-        callback(username)
+        User.loadAll(results);
+        callback(username);
       })
       .catch(console.error);
   }
 
   User.forget = () =>{
-    // username is a placeholder. I want to use localStorage for this problem.
-    // check line 33 post request. vi or v1?
+    // TODO: check line 33 post request. vi or v1?
+    // TODO: test to make sure that local build of Users.all is also being reloaded.
+    // TODO: redirect back to home after route fires.
     $.ajax({
       url: `${API_URL}/api/v1/users/${localStorage.username}`,
       method: 'DELETE'
+    }).then(()=> {
+      localStorage.removeItem('username')
     })
+      .then(module.requestView.initLoginPage())
+      .catch(console.error);
   }
 
   module.User = User;
