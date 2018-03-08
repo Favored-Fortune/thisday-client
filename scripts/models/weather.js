@@ -1,22 +1,22 @@
 'use strict'
 
-var API_URL = 'http://localhost:3000';
+// var API_URL = 'http://localhost:3000';
+var API_URL = 'https://git.heroku.com/this-day.git';
 
 (module => {
   let weather = {};
   weather.handle = data => {
-    let arr = data.response.results
-      .filter (x => x.station === data.results[0].station)
-      .map(x => {
-        let out = {};
-        out[x.datatype] = x.value;
-        return out;
-      });
-    console.log('Weather Data: ', arr)
+    weather.data = {};
+    let things = JSON.parse(data.text);
+    things.results
+      .map(x => weather.data[x.datatype] = x.value);
+    app.weatherView.renderWeather()
   }
-  $.get(`${API_URL}/noaa/weather/${localStorage.year}/${localStorage.month}/${localStorage.day}`)
-  //TODO broken by merge conflict module.d.year etc
-    .then(weather.handle)
+
+  weather.fetch = () => {
+    $.get(`${API_URL}/noaa/weather/${localStorage.year}/${localStorage.month}/${localStorage.day}`)
+      .then(weather.handle)
+  }
 
   module.weather = weather;
 })(app);

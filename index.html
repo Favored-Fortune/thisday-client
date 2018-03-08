@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>This Day</title>
+    <title>On This Day</title>
+    <meta property="og:title" content="On This Day" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://on-this-day.github.io/thisday-client/" />
+    <meta property="og:image" content= "https://on-this-day.github.io/thisday-client/images/OnThisDay.png" />
+    <meta property="og:description" content="On This Day is a fun way to see the news events and weather for a day of your choosing." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam|Merienda+One">
     <link rel="stylesheet" href="styles/reset.css">
@@ -15,13 +20,22 @@
     
     <!-- This is the template for error messages -->
     <script id="error-template" type="text/x-handlebars-template">
+      <p>Not getting that page, partner!</p>
       <p>{{status}}: {{statusText}}</p>
     </script>
+
     <!-- this is the results template for a known user -->
     <script id="known-user-template" type="text/x-handlebars-template">
       <h1 id="results">Welcome back, {{username}}</h1>
       <h2 id="date">This is what happened on {{dateSearched}}</h2>
-    
+    </script>
+    <!-- template for weather -->
+
+    <script id="weather-template" type="text/x-handlebars-template">
+      <h2>{{weathering}}</h2>
+      <img src={{image}}>
+      <span id="pullLeft">{{minTemp}}&#8457;</span>
+      <span id="pullRight">{{maxTemp}}&#8457;</span>
     </script>
 
     <!-- template for new articles -->
@@ -37,6 +51,7 @@
   <body>
     <header class="main-container">
       <h1>Welcome to <strong>On This Day</strong>!</h1>
+      <p>Learn more about the news and weather on a day you choose.</p>
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul id="navLinks">
@@ -44,34 +59,17 @@
             <a href="/" class="icon-home">Login/Home</a>
           </li>
           <li class="tab">
-            <a href="/aboutUs" class="icon-users">  About Us</a>
+            <a class="icon-users" id="aboutUs">  About Us</a>
           </li>
         </ul>
     </header>
     <main>
-
-      <!-- <section class="request tab-content">
-        <h2>Tell us your favorite day</h2> <a href="/request"></a>
-        <p>Learn more about the news and weather on that day.</p>
-        <form id ="request-form" action="request-form">
-        <label> <p>Pick your date</p>
-          <input type="date" id="date" placeholder="Request Date" required>
-        </label> -->
-        <!-- <label> <p>Enter the desired zip code</p>
-          <input type="number" id="zip" placeholder="Location Zip Code" required>
-        </label> -->
-        <!-- <button type="submit">See your results</button>
-      </section> -->
       <section class="login login-template tab-content">
-        <a href="/"></a>
-        <form action="user-form" id="user-form">
+        <!-- <a href="/"></a> -->
+        <form id="user-form">
           <label for="username"><p>Enter/Choose your username</p>
-            <input type="text" id="username" placeholder="username"required>
+            <input type="text" name="username" id="username" placeholder="username"required>
           </label>
-          <!-- <label for="pin"><p>Enter a 4 digit PIN to help us remember your favorite day</p>
-            <input type="number" id="pin" placeholder="PIN" required>
-          </label> -->
-          
           <button id="login-button">Login</button>
         </form>
       </section>
@@ -92,29 +90,15 @@
         </form>
       </section>
       <section class="results tab-content">
-        <nav id="results-nav">
-          <ul id="resLinks">
-            <!-- <li class="tab">
-                <a href="/results/weather" class="icon-cloud">  Weather</a>
-            </li>
-            <li class="tab">
-                <a href="/results/events" class="icon-calendar">  Day's Events</a>
-            </li> -->
-            <!-- <li class="tab">
-                <a href="/results/history" class="icon-newspaper">  Day Through History</a>
-            </li>
-            <li class="tab">
-                <a href="/results/people" class="icon-man-woman">  Celebrities</a>
-            </li> -->
-          </ul>
-        </nav>
+        <div class="weatherCard">
+          <h1>Seattle Weather</h1>
+          <div id="weatherCard"></div>
+        </div>
       </section>
-      <section class="history tab-content"></section>
       <section class="news tab-content">
         <h1 id="news-header">Top News Stories on this date</h1>
         <button id="more-news" href="/news">Show More Articles</button>
       </section>
-
       <section class="aboutUs tab-content">
         <h1>About the <strong>On This Day</strong> team</h1>
         <ul class="about-list">
@@ -159,22 +143,21 @@
           </li>
         </ul> 
       </section>
-      <section class="error-view tab-content">
-
-      </section>
+      <section class="error-view tab-content"></section>
     </main>
     <footer></footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>  
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <!-- <script src="scripts/models/thisday.js"></script> -->
+  <!-- <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script> -->
+  <script src="scripts/models/login.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/models/weather.js"></script>
   <!-- <script src="scripts/views/resultsView.js"></script> -->
   <script src="scripts/views/requestView.js"></script>
   <script src="scripts/views/newsView.js"></script>
-  <!-- <script src="scripts/views/historyView.js"></script> -->
-  <!-- <script src="scripts/views/errorView.js"></script> -->
-  <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/views/weatherView.js"></script>
+  <script src="scripts/views/errorView.js"></script>
+  <!-- <script src="scripts/controller/routes.js"></script> -->
+  <script>app.requestView.initLoginPage();</script>
 </html>

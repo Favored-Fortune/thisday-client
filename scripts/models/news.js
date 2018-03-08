@@ -1,7 +1,8 @@
 'use strict';
 
 var app = app || {};
-var API_URL = 'http://localhost:3000';
+// var API_URL = 'http://localhost:3000';
+var API_URL = 'https://git.heroku.com/this-day.git';
 
 /*
 
@@ -55,7 +56,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
   // When form is submitted (date entered), the callback function stores the input data and makes a get request to the server for the monthly data from the API
 
   //TO-DO: do filtering logic on server to only send back daily articles from server
-  // TO-DO: instead of event listener on button, use page js routing
+
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
     let year = event.target[0].value;
@@ -68,6 +69,8 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     localStorage.setItem('day', day);
     localStorage.setItem('month', locStorMonth);
     localStorage.setItem('year', year);
+
+    module.weather.fetch();
 
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
       .then(Article.loadAll)
