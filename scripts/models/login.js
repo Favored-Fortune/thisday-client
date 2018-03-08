@@ -57,9 +57,7 @@ var API_URL = 'http://localhost:3000';
   }
 
   User.forget = () =>{
-    // TODO: check line 33 post request. vi or v1?
     // TODO: test to make sure that local build of Users.all is also being reloaded.
-    // TODO: redirect back to home after route fires.
     $.ajax({
       url: `${API_URL}/api/v1/users/${localStorage.username}`,
       method: 'DELETE'
