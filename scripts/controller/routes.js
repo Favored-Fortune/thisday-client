@@ -6,5 +6,5 @@ page('/about', app.requestView.initAboutPage);
 // homepage/request page
 // page('/results', ctx => console.log);
 // app.Article.fetchAll(app.newsView.renderNews));
-page('/*', app.errorView.initErrorPage);
+page('*', ctx => app.errorView.initErrorPage);
 page();

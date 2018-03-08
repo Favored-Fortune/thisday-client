@@ -16,6 +16,7 @@ var app = app || {};
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
     // $('#aboutUs').on('click', app.requestView.initAboutPage);
+
   }
 
   requestView.initKnownUser = (user) => {
