@@ -17,6 +17,7 @@ var app = app || {};
     $('.login').fadeIn(1000);
     $('#aboutUs').on('click', app.requestView.initAboutPage);
     $('#username').val('');
+    module.User.getAll();
   }
 
   requestView.initKnownUser = (user) => {
