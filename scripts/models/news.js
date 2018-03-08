@@ -29,10 +29,8 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     this.headline = object.headline.main;
     this.link = object.web_url;
   }
-  console.log(Article.all);
   Article.prototype.toHtml = function() {
     let template = Handlebars.compile($('#news-template').text());
-    console.log(Article.all);
     return template(this);
   }
 
@@ -44,7 +42,6 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     let day = localStorage.getItem('day');
     let month = localStorage.getItem('month');
     let year = localStorage.getItem('year');
-    console.log(data.response.docs);
     Article.all = data.response.docs.filter(object => {
       let date = object.pub_date.split('T')[0];
       if (date === `${year}-${month}-${day}` && object.print_page === '1') {
@@ -75,12 +72,10 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     localStorage.setItem('year', year);
 
     if ($('#save-date')[0].checked) {
-      console.log('checked');
       app.User.update()
     }
 
     module.weather.fetch();
-    console.log(event.target[0].value);
 
     // $('#newsLoading').show();
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
