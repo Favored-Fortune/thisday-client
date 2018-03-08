@@ -29,9 +29,10 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     this.headline = object.headline.main;
     this.link = object.web_url;
   }
-
+  console.log(Article.all);
   Article.prototype.toHtml = function() {
     let template = Handlebars.compile($('#news-template').text());
+    console.log(Article.all);
     return template(this);
   }
 
@@ -61,6 +62,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     event.preventDefault();
     $('#weatherLoading').show();
     $('#newsLoading').show();
+    $('.news-container').remove();
     let year = event.target[0].value;
     let month = event.target[1].value;
     let day = event.target[2].value;
@@ -78,6 +80,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     }
 
     module.weather.fetch();
+    console.log(event.target[0].value);
 
     // $('#newsLoading').show();
     $.get(`${API_URL}/nyt/articles/${year}/${thisMonth}`)
