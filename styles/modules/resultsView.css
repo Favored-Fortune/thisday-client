@@ -5,10 +5,12 @@ lightGray: #A3ADB8
 darkGray: #4E6172 */
 
 #news-header {
+  width:260px;
   font-size: 20px;
-  color: #DBCA69;
+  color: #668D3C;
   margin: 20px 0 30px 0;
-  border-bottom: 2px solid #DBCA69;
+  text-shadow: 2px 2px 5px #000;
+  border-bottom: 2px solid #668D3C;
 }
 
 #blurb {
@@ -18,20 +20,62 @@ darkGray: #4E6172 */
 .news-container h1 {
   font-weight: bolder;
   font-size: 20px;
-  color: #668D3C;
-  text-shadow: 2px 2px black;
+  color: #DBCA69;
+  text-shadow: 2px 2px 5px #000;
   margin: 10px 0;
 }
 
 .news {
+  width:86%;
+  margin:5%;
   text-align: justify;
 }
 
+.news-container{
+  margin:30px 0;
+}
+
+.news-container a{
+  text-decoration: none;
+  color:#fff;
+  background-color: #668D3C;
+  padding: 0 5px;
+  border: 1px solid #DBCA69;
+  border-radius: 6px;
+}
+
+.news-container a:hover{
+  text-decoration: none;
+  color:#000;
+  background-color: #DBCA69;
+  border: 1px solid #668D3C;
+}
+
+.news button{
+  background-color: #668D3C;
+  border-radius: 6px;
+  border:2px solid #DBCA69;
+  width: 190px;
+  height: 35px;
+  margin: 15px 0 0 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.news button:hover{
+  background-color: #DBCA69;
+  border:2px solid #668D3C;
+  color: #000;
+}
+
 #newsLoading{
-  width:90%;
+  width:80%;
+  margin: 0 10%;
 }
 
 .weatherCard {
+  width:90%;
+  margin:5%;
   border-bottom: 1px solid #DBCA69;
 }
 
@@ -60,40 +104,93 @@ darkGray: #4E6172 */
   margin: 150px 10px 10px 0;
 }
 
-
 #weatherLoading{
-  width: 90%;
+  width: 80%;
+  margin: 0 10% 5% 10%;
 }
 
-#forget {
-  float: right;
+#currentDate, #chosenDate{
+  margin: 10px 30px;
+}
 
+#currentDate{
+  margin-top:30px;
 }
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */
-
-}
-
-@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+  
   #news-header {
-    font-size: 30px;
+    width:260px;
+    font-size: 20px;
   }
-
+  
   #newsLoading{
-    width:40%;
+    margin:10px 0 10px 30px;
+    width:50%;
+    float:left;
   }
 
   #weatherLoading{
-    width: 50%;
+    width:40%;
+    float:right;
+    margin: 10px 20px 20px 10px;
   }
   
   .weatherCard{
     width:40%;
     float:right;
+    margin: 40px 20px 20px 10px;
   }
 
   .news{
+    margin:50px 20px;
+  }
+
+  #currentDate, #chosenDate{
+    margin: 10px 30px;
+  }
+
+  #currentDate{
+    margin-top:30px;
+  }
+}
+
+@media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+  #news-header {
+    font-size: 30px;
+    width:390px
+  }
+
+  #newsLoading{
+    margin:10px 20px;
     width:50%;
     float:left;
   }
+
+  #weatherLoading{
+    width:40%;
+    float:right;
+    margin: 10px 20px 20px 10px;
+  }
+  
+  .weatherCard{
+    width:40%;
+    float:right;
+    margin: 40px 20px 20px 10px;
+  }
+
+  .news{
+    margin:10px 20px;
+    width:50%;
+    float:left;
+  }
+
+  #currentDate, #chosenDate{
+    margin: 10px 30px;
+  }
+
+  #currentDate{
+    margin-top:30px;
+  }
+  
 }
