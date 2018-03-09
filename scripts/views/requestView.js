@@ -12,7 +12,7 @@ var app = app || {};
     $('#currentDate').empty();
     $('#currentDate').hide();
     $('#info').hide();
-    $('#currentDate').append('The current date is: ' + currentDate.toDateString());
+    $('#currentDate').append('The current date is ' + currentDate.toDateString(',') + '.');
     $('#currentDate').fadeIn(500);
     $('#info').fadeIn(750);
     $('.login').fadeIn(1000);

@@ -21,15 +21,31 @@ darkGray: #4E6172 */
   margin: 30px;
 }
 
+.requestDate{
+  display: initial;
+}
+
+.inline{
+  display: inline;
+}
+
 #year, #month, #day{
   height: 30px;
   width: 70px;
+  align-content: center;
   
 }
+
 input[type="text"]{
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   border-radius: 6px;
+  padding-top:1vh;
+  margin: 2vw 0vw 3vw 0vw;
+}
+
+label{
+  margin: 2vw;
 }
 
 input[type="checkbox"]{
@@ -89,5 +105,19 @@ input[type="checkbox"]{
 }
 
 @media only screen and (min-width: 960px){ /* DESKTOP VIEWS */
+  
+  /* form{
+    display: inline;
+  }
+  .requestDate{
+    display: initial;
+  } */
+/*   
+  label{
+    display: inline;
+  }
 
+  .inline{
+    display: inline;
+  } */
 }

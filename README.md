@@ -5,7 +5,9 @@ Code Fellows 301 Final Team Project
 ## Why this project?
 
 * Learn more about planning and building full MVC architecure
-* 
+* Learn more about working with PostgreSQL
+* Learn about working with 3rd party APIs
+* Building a RESTful application with full CRUD functionality using AJAX 
 
 ## Built with:
 * VisualCode
@@ -16,7 +18,7 @@ Code Fellows 301 Final Team Project
 * JavaScript
 * GitHub
 * JavaScript
-* JavaScript libraries: jQuery, Handlebars, Page.js, Nodemon, Express, 
+* JavaScript libraries: jQuery, Handlebars, Page.js, Nodemon and Express.
 * JavaScrpt npm packages: CORS, pg, bodyParser, Express
 * Node and PostgreSQL
 * Jon Duckett HTML & CSS book
@@ -31,6 +33,13 @@ As a developer, I want to store the user information such as user name, password
 As a developer, I want to save any API keys in my server file so it cannot be accessed by the view.
 As a developer, I want to have a strech goal of offering the user a star chart for the location and date they enter.
 
+## API 3rd Party Sources
+* NYT Archive API
+http://developer.nytimes.com/
+
+* NOAA Weather API
+https://www.ncdc.noaa.gov/cdo-web/
+
 ## Research/Sources
 * Markdown info: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
 * Gitignore from gitignore.io
@@ -39,6 +48,11 @@ As a developer, I want to have a strech goal of offering the user a star chart f
 * StackOverflow for event listener on checkbox
 * Documentation for page.js https://visionmedia.github.io/page.js/
 * Logojoy for logo generation https://logojoy.com/
+* Navigation for mobile view help from: 
+  * http://jsfiddle.net/GLORIEN/YuzqF/
+  * https://jobs.zalando.com/tech/blog/hidden-navigation-onclick-without-javascript/?gh_src=4n3gxh1
+  * https://css-tricks.com/forums/topic/responsive-navigation-hide-move-itemss-to-dropdown-when-space-runs-out/
+
 
 
 

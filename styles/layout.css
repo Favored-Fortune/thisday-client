@@ -12,7 +12,7 @@ darkGray: #4E6172 */
 
 header img{
   height:60px;
-  width:250px;
+  width:157px;
   margin:-15px 0 -10px -30px;
 }
 
@@ -25,7 +25,7 @@ header img{
 
 .topNav a{
   text-decoration: none;
-  font-size: 20px; 
+  font-size: 2vw; 
   margin-top:10px;
   padding: 0 0 0 25px;
   color:white
@@ -40,6 +40,33 @@ header img{
   color: #fff;
 }
 
+footer {
+  background:  #668D3C;
+  color: white;
+  width: 100%;
+  height: 70px;
+  padding: 15px;
+  text-align: center
+}
+
+footer p {
+  font-size: .75em;
+  width: 80%;
+  height: 70px;
+  padding: 2vw;
+  text-align: center
+}
+
+#tiny{
+  font-size: 1.25vw;
+}
+
+footer img{
+  width:3vw;
+  height:1vh;
+}
+
+
 @media only screen and (max-width: 800px){ /* TABLET VIEWS */
   header img{
     height:60px;
@@ -51,7 +78,7 @@ header img{
   }
 
   .topNav a{
-    font-size: 20px;
+    font-size: 16px;
     display: none;
   }
 
@@ -67,25 +94,64 @@ header img{
     padding:10px 25px;
     margin:-5px 0 0 -35px;
   }
+
   .topNav.responsive .icon-menu {
     position: absolute;
     right: 0;
     top: 20px;
   }
+
   .topNav.responsive a {
   	clear:left;
     float: none;
     display: block;
     text-align: left;
   }
+
+
+  footer {
+    background:  #668D3C;
+    color: white;
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    text-align: center
+  }
+  
+  footer p {
+    font-size: .75em;
+    width: 80%;
+    height: 70px;
+    padding: 2vw;
+    text-align: center
+  }
+  
+  #tiny{
+    font-size: 2vw;
+  }
+  
+
+  /*  NAV TRIGGER */
+  #menuTrigger {
+      display: none;
+  }
+
+  #menuTrigger:checked {
+      display: block;
+  }
+
+  .nav-spacer {
+    width: 10vw;
+    height: 14vh;
+  }
 }
 
 @media only screen and (max-width: 470px){ /*PHONE VIEWS*/
   header img{
     height:50px;
-    width:200px;
-    margin:-15px 0 0 -20px;
+    margin:-15px 0 -10px -30px;
   }
+  
 
   .main-container{
     height:20px;
@@ -108,16 +174,55 @@ header img{
     padding:10px 0 10px 25px;
     margin:-10px 0 0 -20;
   }
+
   .topNav.responsive .icon-menu {
     position: absolute;
     right: 0;
     top: 20px;
   }
+
   .topNav.responsive a {
   	clear:left;
     float: none;
     display: block;
     text-align: left;
   }
+
+  /* MOBILE NAV TRIGGER */
+  #menuTrigger {
+      display: none;
+  }
+
+  #menuTrigger:checked {
+      display: block;
+  }
+
+  .nav-spacer {
+    width: 10vw;
+    height: 12vh;
+  }
+
+
+footer {
+  background:  #668D3C;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-align: center
+}
+
+/* footer p {
+  font-size: .75em;
+  width: 80%;
+  height: 100%;
+  padding: 2vw;
+  text-align: center
+} */
+
+#tiny{
+  font-size: 2vw;
+}
+
   
 }
