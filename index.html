@@ -40,7 +40,9 @@
   <!-- template for weather -->
   <script id="weather-template" type="text/x-handlebars-template">
     <h2>{{weathering}}</h2>
-    <img src={{image}}>
+    <img id="rain" class="hidden" src="/images/rain-cloud.png">
+    <img id="snow" class="hidden" src="/images/snow-cloud.png">
+    <img id="sun" class="hidden" src="/images/sun-cloud.png">
     <span id="pullLeft">{{minTemp}}&#8457;</span>
     <span id="pullRight">{{maxTemp}}&#8457;</span>
   </script>
