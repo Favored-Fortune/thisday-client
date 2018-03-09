@@ -52,17 +52,16 @@
   </head>
   <body>
       <header class="main-container">
-          <img src="images/OnThisDay.png">
-        <nav>
-          <div id="topNav" class="topNav">
-            <div class="icon-menu" onclick="dropNav()"></div>
-            <a href="/" class="icon-home"><span>&nbsp;&nbsp;Login/Home</span></a>
-            <a class="icon-users" id="aboutUs"><span>&nbsp;&nbsp;About Us</span></a>
-            <a id="forget">forget me</a>
-          </div>
+       <img src="images/OnThisDay.png">
+          <nav>
+            <div id="topNav" class="topNav">
+              <div class="icon-menu"></div>
+              <a href="/" class="icon-home"><span>&nbsp;&nbsp;Login/Home</span></a>
+              <a class="icon-users" id="aboutUs"><span>&nbsp;&nbsp;About Us</span></a>
+              <a id="forget">forget me</a>
+            </div>
         </nav>
-
-        </header>
+      </header>
     <main>
       <section id="currentDate"></section>
       <section id="chosenDate" class="tab-content"></section>
@@ -161,14 +160,4 @@
   <script src="scripts/views/weatherView.js"></script>
   <script src="scripts/views/errorView.js"></script>
   <script src="scripts/controller/routes.js"></script>
-  <script>
-    function dropNav() {
-      var drop = document.getElementById("topNav");
-      if (drop.className === "topNav") {
-        drop.className += " responsive";
-      } else {
-        drop.className = "topNav";
-      }
-    }
-</script>
 </html>
