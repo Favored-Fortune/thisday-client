@@ -63,7 +63,7 @@ var API_URL = 'https://this-day.herokuapp.com';
       url: `${API_URL}/api/v1/users/${localStorage.username}`,
       method: 'DELETE'
     }).then(()=> {
-      localStorage.removeItem('username')
+      localStorage.clear()
     })
       .then(module.requestView.initLoginPage())
       .catch(console.error);

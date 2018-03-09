@@ -19,8 +19,11 @@ This view file works with our news.js data to do all the jQuery magic that displ
     app.weatherView.renderWeather();
     $('.tab-content').hide();
     $('.news').hide();
+    localStorage.view = 'results';
 
-    module.Article.all.map(article => $('.news').append(article.toHtml()))
+    if (!module.Article.all) module.article.all = JSON.parse (localStorage.articles);
+    module.Article.all.map(article => $('.news').append(article.toHtml()));
+    localStorage.articles = JSON.stringify (module.Article.all);
     $('#chosenDate').text(`Your chosen date was ${localStorage.month}/${localStorage.day}/${localStorage.year}`);
     $('#chosenDate').fadeIn(750)
     $('.news').fadeIn(750);

@@ -7,6 +7,7 @@ var app = app || {};
 
   requestView.initLoginPage = () => {
     let currentDate = new Date;
+    let username = localStorage.username ? localStorage.username : '';
     $('.icon-menu').on('click', module.requestView.dropNav);
     $('.tab-content').hide();
     $('#currentDate').empty();
@@ -17,7 +18,8 @@ var app = app || {};
     $('main > p').fadeIn(750);
     $('.login').fadeIn(1000);
     $('#aboutUs').on('click', app.requestView.initAboutPage);
-    $('#username').val('');
+    $('#username').val(username);
+    localStorage.view = 'login'
   }
 
   requestView.initKnownUser = (user) => {
