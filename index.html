@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>On This Day</title>
-    <!-- <base href="."> -->
+   
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="On This Day" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://on-this-day.github.io/thisday-client/" />
     <meta property="og:image" content= "https://on-this-day.github.io/thisday-client/images/OnThisDay.png" />
     <meta property="og:description" content="On This Day is a fun way to see the news events and weather for a day of your choosing." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Defaulting initial view for mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Stylesheets including fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam|Merienda+One">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -48,105 +53,116 @@
         <a href="{{link}}">Read Article</a>
       </section>
     </script>
-
   </head>
   <body>
-      <header class="main-container">
-       <img src="images/OnThisDay.png">
-          <nav>
-            <div id="topNav" class="topNav">
-              <div class="icon-menu"></div>
-              <a href="/" class="icon-home"><span>&nbsp;&nbsp;Login/Home</span></a>
-              <a class="icon-users" id="aboutUs"><span>&nbsp;&nbsp;About Us</span></a>
-              <a id="forget">forget me</a>
-            </div>
-        </nav>
-      </header>
-    <main>
-      <section id="currentDate"></section>
-      <section id="chosenDate" class="tab-content"></section>
-      <p id="info">Login to choose a date.</p>
-      <section class="login login-template tab-content">
-        <p>Welcome to On this Day!</p> 
-        <p>You can get the news and weather for any day as far back as 1851.</p> 
-        <p>Just choose a username to login then you can enter a date. The first date you choose will be saved as your favorite day, but you can change that any time you want, and search as many dates as you want.</p> 
-        <p>If you want no data stored on you, just select the forget me button in the menu and all your data will be deleted.</p> 
-        <p>What are you waiting for? Login and get started!</p>        
-        <form id="user-form">
-          <label for="username"><p>Enter/Choose your username</p>
-            <input type="text" name="username" id="username" placeholder="username"required>
-          </label>
-          <button id="login-button">Login</button>
-        </form>
-      </section>
-      <section class="request tab-content">
-        <form id="requestDate">                     
-          <label>Enter the Date you wish to view:</label>  <br/>                   
-          <input id="year" type="text" placeholder="YYYY"></input>                    
-          <input id="month" type="text" placeholder="MM"></input>                     
+    <header class="main-container">
+      <img src="images/OnThisDay.png">
+        <nav>
+          <div id="topNav" class="topNav">
+            <div class="icon-menu"></div>
+            <a href="/" class="icon-home"><span>&nbsp;&nbsp;Login/Home</span></a>
+            <a class="icon-users" id="aboutUs"><span>&nbsp;&nbsp;About Us</span></a>
+            <a id="forget">forget me</a>
+          </div>
+      </nav>
+    </header>
+  <main>
+    <!-- Show current date -->
+    <section id="currentDate"></section>
 
-          <input id="day" type="text" placeholder="DD"></input>
-          <br/>
-          <label>
-            <input type="checkbox" id="save-date">Would you like to save your request?
-          </label>          
-          <br/>          
-          <button type="submit" href="/results">Submit</button>                 
-        </form>
-      </section>
-      <img id="weatherLoading" class="tab-content" src="images/loadingCloud.gif"></img>
-      <section class="results tab-content">
-        <div class="weatherCard">
-          <h1>Seattle Weather</h1>
-          <div id="weatherCard"></div>
+    <!-- shows chosen date if it exists along with login form -->
+    <section id="chosenDate" class="tab-content"></section>
+    <p id="info">Login to choose a date.</p>
+     <!-- login instructions -->
+    <section class="login login-template tab-content">
+     
+      <h3>Welcome to On this Day</h3> 
+      <p>This application allows you to get headline news from the New York Times and Seattle weather from NOAA for any day as far back as 1851.</p> 
+      <h3>How to get started</h3>
+      <ol>
+        <li> 1. Enter a username of your choice to login.</li>
+        <li> 2. Enter a date.</li>
+        <li> 3. Click the sumbit button.*
+            <li>* Note that day is now saved as your favorite day.
+            You can still search other dates and change your saved date any time.</li> 
+            <li>* Any time you like, click "Forget Me" in the navigation to erase your information.</li> 
+        </li>
+      </ol>        
+      <form id="user-form">
+        <label for="username"><p>Enter/Choose your username</p>
+          <input type="text" name="username" id="username" placeholder="username"required>
+        </label>
+        <button id="login-button">Login</button>
+      </form>
+    </section>
+    <section class="request tab-content">
+      <form id="requestDate">                     
+        <label>Enter the Date you wish to view:</label>  <br/>                   
+        <input id="year" type="text" placeholder="YYYY"></input>                    
+        <input id="month" type="text" placeholder="MM"></input>                     
+
+        <input id="day" type="text" placeholder="DD"></input>
+        <br/>
+        <label>
+          <input type="checkbox" id="save-date">Would you like to save your request?
+        </label>          
+        <br/>          
+        <button type="submit" href="/results">Submit</button>                 
+      </form>
+    </section>
+    <img id="weatherLoading" class="tab-content" src="images/loadingCloud.gif"></img>
+    <section class="results tab-content">
+      <div class="weatherCard">
+        <h1>Seattle Weather</h1>
+        <div id="weatherCard"></div>
+      </div>
+    </section>
+    <img id="newsLoading" class="tab-content" src="images/loadingNewspaper.gif"></img>
+    <section class="news tab-content">
+      <h1 id="news-header">Top News Stories on this date</h1>
+      <button id="more-news" href="/news">Show More Articles</button>
+    </section>
+    <section class="aboutUs tab-content">
+      <span>About the <strong>On This Day</strong> Team</span>
+      <div class="person-container">
+        <div class="person">
+          <h3>Brent Williams</h3>
+          <div class="image-size"><img src="images/BrentWilliams.png"></div>
+          <a href="https://github.com/wtnerb" class="icon-github"></a>
+          <a href="https://www.linkedin.com/in/wtnerb/"  class="icon-linkedin"></a>
+          <p id="bio">I am a C# web developer, though I know more js than I’d like. I studied physics at WSU, and love dogs. I’m trying to move to being a backend developer because I’ve always loved solving problems, whether it be math, physics, chess or algorithms.</p>
         </div>
-      </section>
-      <img id="newsLoading" class="tab-content" src="images/loadingNewspaper.gif"></img>
-      <section class="news tab-content">
-        <h1 id="news-header">Top News Stories on this date</h1>
-        <button id="more-news" href="/news">Show More Articles</button>
-      </section>
-      <section class="aboutUs tab-content">
-        <span>About the <strong>On This Day</strong> Team</span>
-        <div class="person-container">
-          <div class="person">
-            <h3>Brent Williams</h3>
-            <div class="image-size"><img src="images/BrentWilliams.png"></div>
-            <a href="https://github.com/wtnerb" class="icon-github"></a>
-            <a href="https://www.linkedin.com/in/wtnerb/"  class="icon-linkedin"></a>
-            <p id="bio">I am a C# web developer, though I know more js than I’d like. I studied physics at WSU, and love dogs. I’m trying to move to being a backend developer because I’ve always loved solving problems, whether it be math, physics, chess or algorithms.</p>
-          </div>
-          <div class="person">
-            <h3>Kris Sakarias</h3>
-            <div class="image-size"><img src="images/KrisSakarias.png"></div>
-            <a href="https://github.com/kris71990" class="icon-github"></a>
-            <a href="https://www.linkedin.com/in/kris-sakarias/" class="icon-linkedin"></a>
-            <p id="bio">I am a full-stack Javascript developer whose interests include reading, traveling, and eating interesting food.</p>
-          </div>
-          <div class="person">
-            <h3>Mikayla Mehelich</h3>
-            <div class="image-size"><img src="images/MikaylaMehelich.jpg"></div>
-            <a href="https://github.com/MMehelich" class="icon-github"></a>
-            <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin"></a>
-            <p id="bio"> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</p>
-          </div>
-          <div class="person">
-            <h3>Steven Starwalt</h3>
-            <div class="image-size"><img src="images/StevenStarwalt.jpg"></div>
-            <a href="https://github.com/steveflys" class="icon-github"></a>
-            <a href="https://www.linkedin.com/in/steven-starwalt-9077a7157/" class="icon-linkedin"></a>
-            <p id="bio">Steve's first career was as a Navy Submariner.  He retired as a Command Master Chief and started his second career in wood door manufacturing.  He is at Code Fellows to begin his third career as a python coder.  His other passions include his wife, 2 dogs & zoo, rescuing anything that walks, flys, or crawls, scuba diving, and paragliding.</p>
-          </div>
-          <div class="person">
-            <h3>Suzanne Richman</h3>
-            <div class="image-size"><img src="images/SuzanneRichman.png"></div>
-            <a href="https://github.com/FavoredFortune" class="icon-github"></a>
-            <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin"></a>
-            <p id="bio">As a full-stack JavaScript I’m keen to help make people’s lives easier.</p>
-          </div> 
+        <div class="person">
+          <h3>Kris Sakarias</h3>
+          <div class="image-size"><img src="images/KrisSakarias.png"></div>
+          <a href="https://github.com/kris71990" class="icon-github"></a>
+          <a href="https://www.linkedin.com/in/kris-sakarias/" class="icon-linkedin"></a>
+          <p id="bio">I am a full-stack Javascript developer whose interests include reading, traveling, and eating interesting food.</p>
         </div>
-      </section>
-      <section class="error-view tab-content"></section>
+        <div class="person">
+          <h3>Mikayla Mehelich</h3>
+          <div class="image-size"><img src="images/MikaylaMehelich.jpg"></div>
+          <a href="https://github.com/MMehelich" class="icon-github"></a>
+          <a href="https://www.linkedin.com/in/mikayla-mehelich-04606a159/" class="icon-linkedin"></a>
+          <p id="bio"> I am a front-end web developer and stylist. My hobbies are reading and art and cooking.</p>
+        </div>
+        <div class="person">
+          <h3>Steven Starwalt</h3>
+          <div class="image-size"><img src="images/StevenStarwalt.jpg"></div>
+          <a href="https://github.com/steveflys" class="icon-github"></a>
+          <a href="https://www.linkedin.com/in/steven-starwalt-9077a7157/" class="icon-linkedin"></a>
+          <p id="bio">Steve's first career was as a Navy Submariner.  He retired as a Command Master Chief and started his second career in wood door manufacturing.  He is at Code Fellows to begin his third career as a python coder.  His other passions include his wife, 2 dogs & zoo, rescuing anything that walks, flys, or crawls, scuba diving, and paragliding.</p>
+        </div>
+        <div class="person">
+          <h3>Suzanne Richman</h3>
+          <div class="image-size"><img src="images/SuzanneRichman.png"></div>
+          <a href="https://github.com/FavoredFortune" class="icon-github"></a>
+          <a href="https://www.linkedin.com/in/suzannerichman" class="icon-linkedin"></a>
+          <p id="bio">As a full-stack JavaScript I’m keen to help make people’s lives easier.</p>
+        </div> 
+      </div>
+    </section>
+    <section class="error-view tab-content"></section>
     </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
