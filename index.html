@@ -55,7 +55,7 @@
           <h1>Welcome to <strong>On This Day</strong>!</h1>
           <hr/>
           <nav>
-            <div id="topNav" class="topNav">
+            <div id="topNav" class="topNav responsive">
               <div class="icon-menu" onclick="dropNav()"></div>
               <a href="/" class="icon-home"><span>&nbsp;&nbsp;Login/Home</span></a>
               <a class="icon-users" id="aboutUs"><span>&nbsp;&nbsp;About Us</span></a>
@@ -158,13 +158,13 @@
   <script src="scripts/views/errorView.js"></script>
   <script src="scripts/controller/routes.js"></script>
   <script>
-    function dropNav() {
-      var drop = document.getElementById("topNav");
-      if (drop.className === "topNav") {
-        drop.className += " responsive";
-      } else {
-        drop.className = "topNav";
-      }
-    }
+    // function dropNav() {
+    //   var drop = document.getElementById("topNav");
+    //   if (drop.className === "topNav") {
+    //     drop.className += " responsive";
+    //   } else {
+    //     drop.className = "topNav";
+    //   }
+    // }
 </script>
 </html>
