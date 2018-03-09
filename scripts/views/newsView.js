@@ -19,6 +19,7 @@ This view file works with our news.js data to do all the jQuery magic that displ
     app.weatherView.renderWeather();
     $('.tab-content').hide();
     $('.news').hide();
+    $('#info').hide();
 
     module.Article.all.map(article => $('.news').append(article.toHtml()))
     $('#chosenDate').text(`Your chosen date was ${localStorage.month}/${localStorage.day}/${localStorage.year}`);
@@ -29,6 +30,7 @@ This view file works with our news.js data to do all the jQuery magic that displ
     
     $('#more-news').on('click', function() {
       $('.tab-content').hide();
+      $('#info').hide();
       $('.news').hide();
       $('.news').empty();
       module.Article.all.map(article => $('.news').append(article.toHtml()))
