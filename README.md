@@ -5,7 +5,7 @@ Code Fellows 301 Final Team Project
 ## Why this project?
 
 * Learn more about planning and building full MVC architecure
-* 
+* Learn how to use web APIs in apps.
 
 ## Built with:
 * VisualCode
@@ -15,8 +15,7 @@ Code Fellows 301 Final Team Project
 * CSS  
 * JavaScript
 * GitHub
-* JavaScript
-* JavaScript libraries: jQuery, Handlebars, Page.js, Nodemon, Express, 
+* JavaScript libraries: jQuery, Handlebars, Page.js, Nodemon 
 * JavaScrpt npm packages: CORS, pg, bodyParser, Express
 * Node and PostgreSQL
 * Jon Duckett HTML & CSS book
@@ -24,11 +23,11 @@ Code Fellows 301 Final Team Project
 * Help from our instructors, Allie Grampa & Vinico Sanchez, as well as our TAs and classmates.
 
 ## User stories and strech goals:
-As a user, I want to be able to enter a date and location as far back as 1945 and get information on people of note that were born or died on that day, the weather at that location on that day, and notable news events on that day.
-As a user, I want the option of seeing historical births, deaths and news events on the same day.
+As a user, I want to be able to enter a date and location as far back as 1945 and get the news and weather on that day.
+As a user, I want the option of an overvirew as well as more detail of the news on that day.
 As a developer, I want to use web APIs to get the data for the day in question and format it to display for the user.
-As a developer, I want to store the user information such as user name, password, and dates searched in a database so when the user returns I will be able to properly log them in and provide their previous dates searched information. 
-As a developer, I want to save any API keys in my server file so it cannot be accessed by the view.
+As a developer, I want to store the user information such as user name, password, and favorite date searched in a database so when the user returns I will be able to properly log them in and provide their favorite date already entered in the date form. 
+As a developer, I want to save any API keys in such a way as it cannot be accessed by the view.
 As a developer, I want to have a strech goal of offering the user a star chart for the location and date they enter.
 
 ## Research/Sources
@@ -39,6 +38,7 @@ As a developer, I want to have a strech goal of offering the user a star chart f
 * StackOverflow for event listener on checkbox
 * Documentation for page.js https://visionmedia.github.io/page.js/
 * Logojoy for logo generation https://logojoy.com/
+* GIFs obtained from 
 
 
 
