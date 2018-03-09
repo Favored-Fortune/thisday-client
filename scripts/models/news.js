@@ -3,6 +3,7 @@
 var app = app || {};
 // var API_URL = 'http://localhost:3000';
 var API_URL = 'https://this-day.herokuapp.com';
+
 /*
 
 We should create a file similar to this for each of our data sets (NYT, Weather, Famous People, etc) - a model that is a property of our app where ajax requests are made and data is received from the server and run through a constructor if necessary.
