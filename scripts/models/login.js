@@ -16,13 +16,17 @@ var API_URL = 'https://this-day.herokuapp.com';
 
   $('#user-form').on('submit', function(event){
     event.preventDefault();
-    localStorage.username = event.target.username.value;
-    User.getAll(User.checkUser, localStorage.username);
+    sessionStorage.username = event.target.username.value;
+    User.getAll(User.checkUser, sessionStorage.username);
   });
 
   User.checkUser = function(loginName) {
     const userCheck = User.all.filter(userObj => userObj.username === loginName)
     if(userCheck.length === 1) {
+      let date = userCheck[0].fav_date.split('T')[0].split('-');
+      sessionStorage.year = date[0];
+      sessionStorage.month = date[1];
+      sessionStorage.day = date[2];
       app.requestView.initKnownUser(userCheck);
     }else{
       app.requestView.initNewUser(loginName);
@@ -60,10 +64,10 @@ var API_URL = 'https://this-day.herokuapp.com';
   User.forget = () =>{
     // TODO: test to make sure that local build of Users.all is also being reloaded.
     $.ajax({
-      url: `${API_URL}/api/v1/users/${localStorage.username}`,
+      url: `${API_URL}/api/v1/users/${sessionStorage.username}`,
       method: 'DELETE'
     }).then(()=> {
-      localStorage.removeItem('username')
+      sessionStorage.removeItem('username')
     })
       .then(module.requestView.initLoginPage())
       .catch(console.error);
@@ -74,12 +78,11 @@ var API_URL = 'https://this-day.herokuapp.com';
       url: `${API_URL}/api/v1/users`,
       method: 'PUT',
       data: {
-        username: localStorage.username,
-        date: `${localStorage.year}-${localStorage.month}-${localStorage.day}`,
+        username: sessionStorage.username,
+        date: `${sessionStorage.year}-${sessionStorage.month}-${sessionStorage.day}`,
       }
     })
   }
-
   module.User = User;
 
 })(app)

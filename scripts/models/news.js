@@ -39,9 +39,9 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
   Article.loadAll = articles => {
     // $('#newsLoading').hide();
     let data = JSON.parse(articles.text);
-    let day = localStorage.getItem('day');
-    let month = localStorage.getItem('month');
-    let year = localStorage.getItem('year');
+    let day = sessionStorage.getItem('day');
+    let month = sessionStorage.getItem('month');
+    let year = sessionStorage.getItem('year');
     Article.all = data.response.docs.filter(object => {
       let date = object.pub_date.split('T')[0];
       if (date === `${year}-${month}-${day}` && object.print_page === '1') {
@@ -67,9 +67,9 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
     if (month.charAt(0) === '0' && month.length === 2) thisMonth = month.charAt(1);
 
-    localStorage.setItem('day', day);
-    localStorage.setItem('month', month);
-    localStorage.setItem('year', year);
+    sessionStorage.setItem('day', day);
+    sessionStorage.setItem('month', month);
+    sessionStorage.setItem('year', year);
 
     if ($('#save-date')[0].checked) {
       app.User.update()

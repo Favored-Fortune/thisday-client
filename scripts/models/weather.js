@@ -17,7 +17,7 @@ var API_URL = 'https://this-day.herokuapp.com';
 
   // $('#weatherLoading').show();
   weather.fetch = () => {
-    $.get(`${API_URL}/noaa/weather/${localStorage.year}/${localStorage.month}/${localStorage.day}`)
+    $.get(`${API_URL}/noaa/weather/${sessionStorage.year}/${sessionStorage.month}/${sessionStorage.day}`)
       .then(weather.handle)
   }
 

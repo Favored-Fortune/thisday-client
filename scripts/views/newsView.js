@@ -19,9 +19,10 @@ This view file works with our news.js data to do all the jQuery magic that displ
     app.weatherView.renderWeather();
     $('.tab-content').hide();
     $('.news').hide();
+    sessionStorage.currentPage = 'newsView.renderNews';
 
     module.Article.all.map(article => $('.news').append(article.toHtml()))
-    $('#chosenDate').text(`Your chosen date was ${localStorage.month}/${localStorage.day}/${localStorage.year}`);
+    $('#chosenDate').text(`Your chosen date was ${sessionStorage.month}/${sessionStorage.day}/${sessionStorage.year}`);
     $('#chosenDate').fadeIn(750)
     $('.news').fadeIn(750);
     $('.results').fadeIn(750);

@@ -6,6 +6,10 @@ var app = app || {};
   const requestView = {}
 
   requestView.initLoginPage = () => {
+    let reload = () =>`app.${sessionStorage.currentPage}([{username: "${sessionStorage.username}", pin: "0000", fav_date: "${sessionStorage.year}-${sessionStorage.month}-${sessionStorage.day}T00:00:00.000Z}"]);`
+    if(sessionStorage) {
+      reload();
+    }
     let currentDate = new Date;
     $('.icon-menu').on('click', module.requestView.dropNav);
     $('.tab-content').hide();
@@ -24,10 +28,12 @@ var app = app || {};
     $('.tab-content').hide();
     $('main > p').hide();
     $('.request').fadeIn(750);
+    console.log(user);
     let date = user[0].fav_date.split('T')[0].split('-');
     $('#year').val(date[0]);
     $('#month').val(date[1]);
     $('#day').val(date[2]);
+    sessionStorage.currentPage = 'requestView.initKnownUser';
   };
 
   requestView.initNewUser = (user) => {
@@ -36,6 +42,7 @@ var app = app || {};
     $('#year').val('');
     $('#month').val('');
     $('#day').val('');
+    sessionStorage.currentPage = 'requestView.initNewUser';
   }
 
   requestView.initAboutPage = () => {
