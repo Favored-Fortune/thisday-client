@@ -10,14 +10,10 @@ darkGray: #4E6172 */
   font-family: 'Merienda One', cursive;
 }
 
-header h1{
-  font-size: 30px;
-  margin: 0 0 0 10px;
-}
-
-hr{
-  width:380px;
-  margin:-3px 0 0 5px;
+header img{
+  height:60px;
+  width:250px;
+  margin:-15px 0 -10px -30px;
 }
 
 .main-container{
@@ -45,16 +41,9 @@ hr{
 }
 
 @media only screen and (max-width: 800px){ /* TABLET VIEWS */
-  header h1{
-    font-size: 30px;
-    float:left;
-    margin-left:20px;
-  }
-  
-  hr{
-    width:380px;
-    margin: 30px 0 0 -376px;
-    float:left
+  header img{
+    height:60px;
+    margin:-15px 0 0 -30px;
   }
 
   .main-container{
@@ -69,20 +58,19 @@ hr{
   .icon-menu{
     display: block;
     float: right;
-    margin:-15px 30px 0 0;
+    margin:-65px 30px 0 0;
   }
 
   .topNav.responsive {
     position: relative;
     background-color: #668D3C;
     padding:10px 25px;
-    margin-top:37px;
-    
+    margin:-5px 0 0 -35px;
   }
   .topNav.responsive .icon-menu {
     position: absolute;
     right: 0;
-    top: -22px;
+    top: 20px;
   }
   .topNav.responsive a {
   	clear:left;
@@ -93,16 +81,10 @@ hr{
 }
 
 @media only screen and (max-width: 470px){ /*PHONE VIEWS*/
-  header h1{
-    font-size: 20px;
-    float:left;
-    margin-left:20px;
-  }
-  
-  hr{
-    width:255px;
-    margin: -3px 0 0 16px;
-    float:left
+  header img{
+    height:50px;
+    width:200px;
+    margin:-15px 0 0 -20px;
   }
 
   .main-container{
@@ -110,27 +92,26 @@ hr{
   }
 
   .topNav a{
-    font-size: 20px;
+    font-size: 15px;
     display: none;
   }
 
   .icon-menu{
     display: block;
     float: right;
-    margin:-23px 30px 0 0;
+    margin:-55px 30px 0 0;
   }
 
   .topNav.responsive {
     position: relative;
     background-color: #668D3C;
-    padding:10px 25px;
-    margin-top:25px;
-    
+    padding:10px 0 10px 25px;
+    margin:-10px 0 0 -20;
   }
   .topNav.responsive .icon-menu {
     position: absolute;
     right: 0;
-    top: -5px;
+    top: 20px;
   }
   .topNav.responsive a {
   	clear:left;
