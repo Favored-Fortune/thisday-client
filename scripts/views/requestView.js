@@ -7,6 +7,7 @@ var app = app || {};
 
   requestView.initLoginPage = () => {
     let currentDate = new Date;
+    $('.icon-menu').on('click', module.requestView.dropNav);
     $('.tab-content').hide();
     $('#currentDate').empty();
     $('#currentDate').hide();
@@ -49,6 +50,15 @@ var app = app || {};
     let currentDate = new Date;
     $('.tab-content').hide();
     $('#currentDate').append(currentDate.toDateString());
+  }
+
+  requestView.dropNav = () => {
+    var drop = document.getElementById('topNav');
+    if (drop.className === 'topNav') {
+      drop.className += ' responsive';
+    } else {
+      drop.className = 'topNav';
+    }
   }
 
   module.requestView = requestView;
