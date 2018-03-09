@@ -28,20 +28,22 @@ var app = app || {};
 
     obj.image = (() => {
       console.log(obj.weathering);
-      let image = 'images/sun-cloud.png';
+      $('.hidden').hide();
       if(obj.weathering === 'Snowed'){
-        image = 'images/snow-cloud.png';
+        $('#snow').fadeIn(500);
       } else if(obj.weathering === 'Poured'){
-        image = 'images/rain-cloud.png';
+        $('#rain').fadeIn(500);
       } else if(obj.weathering === 'Rained'){
-        image = 'images/rain-cloud.png';
+        $('#rain').fadeIn(500);
+      } else {
+        $('#sun').fadeIn(500);
       }
-      return image;
-    })()
+    })
 
     let template = Handlebars.compile($('#weather-template').text());
 
     $('#weatherCard').empty().append(template(obj));
+    obj.image();
   }
 
   module.weatherView = weatherView;
