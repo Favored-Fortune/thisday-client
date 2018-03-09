@@ -29,6 +29,18 @@ var app = app || {};
       return weathering;
     })()
 
+    obj.image = (() => {
+      let image = 'images/sun-cloud.png';
+      if(module.obj.weathering === 'Snowed'){
+        image = 'images/snow-cloud.png';
+      } else if(module.obj.weathering === 'Poured'){
+        image = 'images/rain-cloud.png';
+      } else if(module.obj.weathering === 'Rained'){
+        image = 'images/rain-cloud.png';
+      }
+      return image;
+    })()
+
     let template = Handlebars.compile($('#weather-template').text());
     //return template(this);
 

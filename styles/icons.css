@@ -40,6 +40,9 @@
 .icon-users:before {
   content: "\e972";
 }
+.icon-bin:before{
+  content: "\e9ac";
+}
 .icon-menu:before {
   content: "\e9bd";
 }
