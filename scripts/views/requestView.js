@@ -20,7 +20,6 @@ var app = app || {};
   }
 
   requestView.initKnownUser = (user) => {
-    console.log(user);
     $('.tab-content').hide();
     $('main > p').hide();
     $('.request').fadeIn(750);
@@ -40,6 +39,9 @@ var app = app || {};
 
   requestView.initAboutPage = () => {
     $('.tab-content').hide();
+    $('#currentDate').hide();
+    $('#chosenDate').hide();
+    $('main > p').hide();
     $('.aboutUs').fadeIn(750);
   }
 
