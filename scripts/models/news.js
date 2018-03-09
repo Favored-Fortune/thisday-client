@@ -58,6 +58,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
 
   $('#requestDate').on('submit', function(event) {
     event.preventDefault();
+    $('.request').hide();
     $('#weatherLoading').show();
     $('#newsLoading').show();
     $('.news-container').remove();

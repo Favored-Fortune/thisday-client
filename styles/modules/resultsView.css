@@ -104,6 +104,10 @@ darkGray: #4E6172 */
   margin: 150px 10px 10px 0;
 }
 
+.weatherCard img {
+  width: 150px;
+}
+
 #weatherLoading{
   width: 80%;
   margin: 0 10% 5% 10%;
