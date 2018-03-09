@@ -39,7 +39,7 @@ var API_URL = 'https://this-day.herokuapp.com';
         User.all.push(newUser);
       })
     }
-    $('#forget button').on('click', module.User.forget)
+    $('#forget').on('click', module.User.forget)
   }
 
   User.create = (newUser) =>
@@ -59,14 +59,12 @@ var API_URL = 'https://this-day.herokuapp.com';
   }
 
   User.forget = () =>{
-    // TODO: test to make sure that local build of Users.all is also being reloaded.
+    localStorage.clear();
+    module.requestView.initLoginPage()
     $.ajax({
       url: `${API_URL}/api/v1/users/${localStorage.username}`,
       method: 'DELETE'
-    }).then(()=> {
-      localStorage.removeItem('username')
     })
-      .then(module.requestView.initLoginPage())
       .catch(console.error);
   }
 

@@ -40,6 +40,11 @@ strong{
 .person h3{
   font-weight: bolder;
   font-size: 20px;
+  text-align: center;
+}
+
+.image-size{
+  text-align: center;
 }
 
 @media only screen and (min-width: 471px){ /* TABLET VIEWS */
@@ -79,7 +84,6 @@ strong{
   }
 
   .image-size {
-    height: 200px;
     width: auto;
   }
 }

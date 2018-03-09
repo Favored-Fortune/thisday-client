@@ -6,10 +6,7 @@ var app = app || {};
   const weatherView = {}
 
   weatherView.renderWeather = () => {
-    //$('.tab-content').hide();
     $('.results').hide();
-    // jQuery stuff hide/show/etc.
-    // call Weather.toHtml to render template
 
     let obj = {};
     //temperature is dependent on weather.js
@@ -29,12 +26,22 @@ var app = app || {};
       return weathering;
     })()
 
+    obj.image = (() => {
+      console.log(obj.weathering);
+      let image = 'images/sun-cloud.png';
+      if(obj.weathering === 'Snowed'){
+        image = 'images/snow-cloud.png';
+      } else if(obj.weathering === 'Poured'){
+        image = 'images/rain-cloud.png';
+      } else if(obj.weathering === 'Rained'){
+        image = 'images/rain-cloud.png';
+      }
+      return image;
+    })()
+
     let template = Handlebars.compile($('#weather-template').text());
-    //return template(this);
 
     $('#weatherCard').empty().append(template(obj));
-    // $('.results').fadeIn(750);
-
   }
 
   module.weatherView = weatherView;
