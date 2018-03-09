@@ -7,7 +7,9 @@ var app = app || {};
 
   requestView.initLoginPage = () => {
     let currentDate = new Date;
-    $('.icon-menu').on('click', module.requestView.dropNav);
+    let username = localStorage.username ? localStorage.username : '';
+    if (!module.requestView.eventListener) $('.icon-menu').on('click', module.requestView.dropNav);
+    requestView.eventListener = true;
     $('.tab-content').hide();
     $('#currentDate').empty();
     $('#currentDate').hide();
@@ -17,7 +19,7 @@ var app = app || {};
     $('#info').fadeIn(750);
     $('.login').fadeIn(1000);
     $('#aboutUs').on('click', app.requestView.initAboutPage);
-    $('#username').val('');
+    $('#username').val(username);
   }
 
   requestView.initKnownUser = (user) => {

@@ -6,13 +6,9 @@ var app = app || {};
   const weatherView = {}
 
   weatherView.renderWeather = () => {
-    //$('.tab-content').hide();
     $('.results').hide();
-    
-    // jQuery stuff hide/show/etc.
-    // call Weather.toHtml to render template
 
-     let obj = {};
+    let obj = {};
     //temperature is dependent on weather.js
     obj.maxTemp = module.weather.data.TMAX;
     obj.minTemp = module.weather.data.TMIN;
@@ -44,11 +40,8 @@ var app = app || {};
     })()
 
     let template = Handlebars.compile($('#weather-template').text());
-    //return template(this);
 
     $('#weatherCard').empty().append(template(obj));
-    // $('.results').fadeIn(750);
-
   }
 
   module.weatherView = weatherView;

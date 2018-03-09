@@ -2,16 +2,6 @@
 
 var app = app || {};
 
-/* 
-
-This view file works with our news.js data to do all the jQuery magic that displays our data as desired on the page.
-~views/
-      newsView.js
-      peopleView.js
-      weatherView.js
-*/
-
-
 (module => {
   const newsView = {}
 
