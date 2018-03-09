@@ -4,15 +4,15 @@ var app = app || {};
 
 (module => {
   const weatherView = {}
-  let obj = {};
 
   weatherView.renderWeather = () => {
     //$('.tab-content').hide();
     $('.results').hide();
+    
     // jQuery stuff hide/show/etc.
     // call Weather.toHtml to render template
 
-    // let obj = {};
+     let obj = {};
     //temperature is dependent on weather.js
     obj.maxTemp = module.weather.data.TMAX;
     obj.minTemp = module.weather.data.TMIN;
