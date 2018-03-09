@@ -30,7 +30,6 @@ var app = app || {};
     })()
 
     let template = Handlebars.compile($('#weather-template').text());
-    console.log(obj);
     //return template(this);
 
     $('#weatherCard').empty().append(template(obj));

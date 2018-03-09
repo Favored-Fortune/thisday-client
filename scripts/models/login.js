@@ -2,7 +2,8 @@
 
 var app = app || {};
 // var API_URL = 'http://localhost:3000';
-var API_URL = 'https://git.heroku.com/this-day';
+var API_URL = 'https://this-day.herokuapp.com';
+
 
 (module => {
 
@@ -34,7 +35,6 @@ var API_URL = 'https://git.heroku.com/this-day';
           fav_date: `${event.target.year.value}-${event.target.month.value}-${event.target.day.value}`
         };
         let newUser = new User(user);
-        console.log(newUser);
         User.create(newUser);
         User.all.push(newUser);
       })

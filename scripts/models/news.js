@@ -2,7 +2,8 @@
 
 var app = app || {};
 // var API_URL = 'http://localhost:3000';
-var API_URL = 'https://git.heroku.com/this-day';
+var API_URL = 'https://this-day.herokuapp.com';
+
 /*
 
 We should create a file similar to this for each of our data sets (NYT, Weather, Famous People, etc) - a model that is a property of our app where ajax requests are made and data is received from the server and run through a constructor if necessary.
@@ -29,7 +30,6 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     this.headline = object.headline.main;
     this.link = object.web_url;
   }
-
   Article.prototype.toHtml = function() {
     let template = Handlebars.compile($('#news-template').text());
     return template(this);
@@ -43,7 +43,6 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     let day = localStorage.getItem('day');
     let month = localStorage.getItem('month');
     let year = localStorage.getItem('year');
-    console.log(data.response.docs);
     Article.all = data.response.docs.filter(object => {
       let date = object.pub_date.split('T')[0];
       if (date === `${year}-${month}-${day}` && object.print_page === '1') {
@@ -61,6 +60,7 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     event.preventDefault();
     $('#weatherLoading').show();
     $('#newsLoading').show();
+    $('.news-container').remove();
     let year = event.target[0].value;
     let month = event.target[1].value;
     let day = event.target[2].value;
@@ -73,7 +73,6 @@ We should create a file similar to this for each of our data sets (NYT, Weather,
     localStorage.setItem('year', year);
 
     if ($('#save-date')[0].checked) {
-      console.log('checked');
       app.User.update()
     }
 

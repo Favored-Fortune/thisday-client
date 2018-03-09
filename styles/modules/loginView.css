@@ -8,6 +8,81 @@ darkGray: #4E6172 */
   margin:30px;
 }
 
+.login p{
+  margin: 10px 0;
+  text-align: justify;
+}
+
+#user-form{
+  margin: 30px 0;
+}
+
+.request{
+  margin: 30px;
+}
+
+#year, #month, #day{
+  height: 30px;
+  width: 70px;
+  
+}
+input[type="text"]{
+  font-size: 24px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+input[type="checkbox"]{
+  margin: 20px 10px 0 7px;
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+}
+
+.login button{
+  background-color: #668D3C;
+  border-radius: 6px;
+  border:2px solid #DBCA69;
+  width: 63px;
+  height: 35px;
+  margin: 15px 0 0 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.login button:hover{
+  background-color: #DBCA69;
+  border:2px solid #668D3C;
+  color: #000;
+}
+
+.request button{
+  background-color: #668D3C;
+  border-radius: 6px;
+  border:2px solid #DBCA69;
+  width: 78px;
+  height:35px;
+  margin: 15px 0 0 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.request button:hover{
+  background-color: #DBCA69;
+  border-radius: 6px;
+  border:2px solid #668D3C;
+  width: 78px;
+  height:35px;
+  margin: 15px 0 0 0;
+  color: #000;
+  font-size: 20px;
+}
+
+#info{
+  margin: 0 0 0 30px;
+}
 
 @media only screen and (min-width: 640px){ /* TABLET VIEWS */
 

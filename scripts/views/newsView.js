@@ -32,6 +32,7 @@ This view file works with our news.js data to do all the jQuery magic that displ
       $('.news').hide();
       $('.news').empty();
       module.Article.all.map(article => $('.news').append(article.toHtml()))
+      $('.weatherCard').hide();
       $('.news').fadeIn(750);
       $('.results').fadeIn(750);
     })

@@ -7,6 +7,7 @@ var app = app || {};
 
   requestView.initLoginPage = () => {
     let currentDate = new Date;
+    $('.icon-menu').on('click', module.requestView.dropNav);
     $('.tab-content').hide();
     $('#currentDate').empty();
     $('#currentDate').hide();
@@ -20,7 +21,6 @@ var app = app || {};
   }
 
   requestView.initKnownUser = (user) => {
-    console.log(user);
     $('.tab-content').hide();
     $('main > p').hide();
     $('.request').fadeIn(750);
@@ -40,6 +40,9 @@ var app = app || {};
 
   requestView.initAboutPage = () => {
     $('.tab-content').hide();
+    $('#currentDate').hide();
+    $('#chosenDate').hide();
+    $('main > p').hide();
     $('.aboutUs').fadeIn(750);
   }
 
@@ -47,6 +50,15 @@ var app = app || {};
     let currentDate = new Date;
     $('.tab-content').hide();
     $('#currentDate').append(currentDate.toDateString());
+  }
+
+  requestView.dropNav = () => {
+    var drop = document.getElementById('topNav');
+    if (drop.className === 'topNav') {
+      drop.className += ' responsive';
+    } else {
+      drop.className = 'topNav';
+    }
   }
 
   module.requestView = requestView;
