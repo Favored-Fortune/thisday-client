@@ -20,7 +20,6 @@ var app = app || {};
   }
 
   requestView.initKnownUser = (user) => {
-    console.log(user);
     $('.tab-content').hide();
     $('main > p').hide();
     $('.request').fadeIn(750);
