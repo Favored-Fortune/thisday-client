@@ -39,6 +39,9 @@ var app = app || {};
 
   requestView.initAboutPage = () => {
     $('.tab-content').hide();
+    $('#currentDate').hide();
+    $('#chosenDate').hide();
+    $('main > p').hide();
     $('.aboutUs').fadeIn(750);
   }
 
